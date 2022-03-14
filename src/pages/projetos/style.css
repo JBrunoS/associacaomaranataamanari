@@ -1,0 +1,57 @@
+.body .content {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 10px;
+}
+
+.project {
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 20px auto;
+    border-radius: 8px;
+    box-shadow: 3px 5px 4px rgba(0, 0, 0, 0.25);
+    background-color: #f3f5f5d3;
+    padding: 20px 10px 40px;
+}
+
+.project div:first-child {
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+    margin-top: 20px;
+}
+
+.project p, li {
+    text-align: justify;
+    margin: 10px 0px 5px;
+    font: 400 18px Roboto, sans-serif;
+}
+
+.project .carousel {
+    width: 80%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+    overflow-x: scroll;
+    
+    margin: 5px;
+}
+
+
+
+.project .carousel img {
+    width: 150px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 5px;
+    margin: 5px;
+    cursor: pointer;
+}

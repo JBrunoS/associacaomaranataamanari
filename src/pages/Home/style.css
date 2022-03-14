@@ -1,0 +1,336 @@
+.body .projects {
+    width: 100%;
+    height: 450px;
+    /* background-image: url('../../assets/kids.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position-y: -50px; */
+    overflow: hidden;
+    position: relative;
+}
+
+.body .projects .button {
+    position: absolute;
+    bottom: 20%;
+    width: 100%;
+    background-color: transparent;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.body .projects a {
+   
+    width: 250px;
+    height: 40px;
+    background-color: #FF8743;
+    color: #FFF;
+    font: 400 18px Roboto, sans-serif;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 6px;
+    box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.25);
+}
+
+.body .about {
+    width: 80%;
+    height: 600px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+}
+
+.body .about div {
+    width: 50%;
+    height: 80%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: justify;
+    font-size: 16px;
+
+}
+.body .about div:first-child {
+    justify-content: space-evenly;
+}
+/* .body .about div span{
+    color: #FF8743;
+    font: 500 28px Roboto, sans-serif;
+    -webkit-font-smoothing: antialiased;
+} */
+
+.body .about div button{
+    width: 40%;
+    height: 40px;
+    border: 0;
+    border-radius: 6px;
+    margin-bottom: 5%;
+    background-color: #FF8743;
+    color: #FFF;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.body .about div:last-child img {
+    width: 90%;
+}
+
+.body .activities {
+    width: 100%;
+    height: 600px;
+    background-color: #f7f7f7b8;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: 30px;
+}
+
+/* .body .activities span {
+    color: #FF8743;
+    font: 500 28px Roboto, sans-serif;
+    -webkit-font-smoothing: antialiased;
+} */
+
+.body .activities .cards {
+    width: 80%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.body .activities .card {
+    width: 25%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    border-radius: 6px;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    cursor: pointer;
+    
+}
+
+.body .activities .card:hover {
+    
+}
+
+.body .activities .card .image-card {
+    width: 100%;
+    height: 250px;
+    overflow: hidden;
+}
+
+.body .activities .card .description-card {
+    width: 100%;
+    height: 50px;
+    background-color: #FFF;
+    border-bottom-left-radius: 6px;
+    border-bottom-right-radius: 6px;
+    padding-left: 10px;
+    font-weight: 500;
+}
+
+.body .activities .card img {
+    width: 100%;
+    border-top-left-radius: 6px;
+    border-top-right-radius: 6px;
+}
+
+.body .activities button{
+    width: 20%;
+    height: 40px;
+    border: 0;
+    border-radius: 6px;
+    margin-bottom: 5%;
+    background-color: #FF8743;
+    color: #FFF;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.body .titulos{
+    width: 100%;
+    height: 220px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    
+}
+
+.body .titulos div{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.body .titulos div img {
+    width: 150px;
+    margin: 10px 10px;
+    opacity: .7;
+}
+
+.body .titulos div img:hover {
+    /* width: 160px; */
+    opacity: 1;
+}
+
+.body .partners{
+    width: 100%;
+    height: 150px;
+    background-color: #FFF;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    
+}
+
+.body .partners div{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.body .partners div img {
+    width: 120px;
+    margin: 10px 10px;
+    opacity: 0.7;
+}
+.body .partners div img:hover {
+    /* width: 130px; */
+    opacity: 1;
+}
+
+.body .contact {
+    width: 100%;
+    height: 600px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #f7f7f7b8;
+    padding-top: 20px;
+}
+
+.body .contact div {
+    width: 90%;
+    height: 90%;
+    display: flex;
+    flex-direction: row;
+    /* align-items: center; */
+    justify-content: center;
+    
+}
+
+.body .contact .form {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.body .contact .form h2 {
+    margin: 20px auto;
+}
+.body .contact .info {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    text-align: center;
+}
+
+.body .contact .info h2 {
+    margin: 0px auto 20px;
+}
+
+.body .contact .info p {
+    margin: 0px auto 10px;
+}
+
+.body .contact .info .agency {
+    width: 60%;
+    height: auto;
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: space-between;
+    
+}
+
+.body .contact .info .map {
+    display: flex;
+    border: 1px solid #c4c4c4;
+    overflow: hidden;
+}
+
+.body .contact div div:first-child {
+    border-right: 1px solid #c4c4c4;
+    justify-content: space-around;
+}
+
+.body .contact div .form form {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.body .contact div .form form input{
+    width: 60%;
+    height: 40px;
+    border-radius: 6px;
+    margin-bottom: 15px;
+    border: 0;
+    box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.25);
+    padding-left: 10px;
+    font: 400 16px Roboto, sans-serif;
+}
+
+.body .contact div .form form textarea{
+    width: 60%;
+    height: 240px;
+    border-radius: 6px;
+    margin-bottom: 15px;
+    border: 0;
+    box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.25);
+    resize: none;
+    padding: 10px 10px;
+    font: 400 16px Roboto, sans-serif;
+    
+}
+
+.body .contact div .form form button{
+    width: 60%;
+    height: 35px;
+    border: 0;
+    border-radius: 6px;
+    margin-bottom: 5%;
+    background-color: #743ED4;
+    color: #FFF;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.body .contact p{
+    font: 500 18px Roboto, sans-serif;
+    text-align: center;
+}
+
+
+
+

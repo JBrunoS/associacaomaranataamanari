@@ -5,10 +5,12 @@ import './style.css'
 
 import kids1 from '../../assets/kidsto.jpg'
 import kids2 from '../../assets/kids.jpg'
+import Header from '../header'
 
 export default function About() {
     return (
         <div className="container">
+            <Header />
             <div className="body">
                 <div className="content">
                     <span>Últimas Atividades</span>

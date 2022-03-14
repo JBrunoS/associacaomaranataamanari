@@ -3,13 +3,14 @@ import { FaInstagram, FaYoutube, FaFacebook, FaWhatsapp } from 'react-icons/fa'
 
 import './style.css'
 import kids2 from '../../assets/kids.jpg'
+import Header from '../header'
 
 export default function Details() {
     const data = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15]
 
     return (
         <div className="container">
-
+            <Header />
             <div className="body">
                 <div className="content">
                     <span>Descrição da Atividade - 20/02/2022</span>

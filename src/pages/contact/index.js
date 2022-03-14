@@ -4,6 +4,7 @@ import {
     StaticGoogleMap,
     Marker,
 } from 'react-static-google-map';
+import Header from '../header';
 
 import './style.css'
 
@@ -11,7 +12,7 @@ import './style.css'
 export default function Contact() {
     return (
         <div className="container">
-
+            <Header />
 
             <div className="body">
                 <div className="content">

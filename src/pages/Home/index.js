@@ -13,6 +13,7 @@ import kids2 from '../../assets/kidsto.jpg'
 import kids1 from '../../assets/kids.jpg'
 import team from '../../assets/team.jpg'
 import { Link, useNavigate } from 'react-router-dom'
+import Header from '../header';
 
 export default function Home() {
 
@@ -33,7 +34,7 @@ export default function Home() {
 
     return (
         <div className='container'>
-
+            <Header />
             <div className='body' >
 
                 <div className='projects' >
@@ -64,7 +65,11 @@ export default function Home() {
                         <span>Quem Somos</span>
 
                         <p>
-                            
+                            A Associaçõa Maranata de Desenvolvimento Social do Amanari fundada em 25 de Março de 2016
+                            na cidade de Maranguape, cujo registro do seu Estatuto encontra-se no cartório Paula Costa,
+                            é uma instiutição Civil, autônoma, com fins não econômicos e, com personalidade jurídica de direito privado de duração indeterminada, com sede e foro
+                            neste município, capital Fortaleza. Associação Maranata desenvolve diversas ativiades nas áres assistenciais, saúde, educacional e sócio-cultural, através de ações próprias, por meio de assessorias técnicas e por intermédio de gestões políticas administrativas
+                            junto a instituições governamentais e não governamentais.  
                         </p>
                         <button onClick={goToHistory} >Saber Mais</button>
                     </div>

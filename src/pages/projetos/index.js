@@ -3,11 +3,12 @@ import { FaInstagram, FaYoutube, FaFacebook, FaWhatsapp } from 'react-icons/fa'
 
 import './style.css'
 import Logo from '../../assets/logo-pev.png'
+import Header from "../header";
 
 export default function Projetos() {
     return (
         <div className="container">
-
+            <Header />
             <div className="body">
                 <div className="content">
                     <span>Projetos</span>

@@ -100,3 +100,60 @@
     color: #FFFFFF;
     
 }
+
+@media only screen and (max-width: 768px){
+    .container-register {
+        flex-direction: column-reverse;
+        align-items: center;
+        justify-content: center;
+        
+    }
+    
+    .container-register form {
+        width: 98%;
+        margin-top: 4px;
+        padding: 10px;
+    }
+    
+    .container-register .photos {
+        width: 98%;
+        
+        background-color: #FFFFFF;
+        margin-top: 5px;
+        margin-left: 0px;
+    }
+    .container-register .photos .card-photos {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        
+    }
+    
+    .container-register .photos .card-photos div {
+        position: absolute;
+        width: auto;
+        height: auto;
+        top: -3px;
+        right: -3px;
+        cursor: pointer;
+    }
+    .container-register .photos img {
+        width: 100%;
+    }
+    
+    .container-register form div {
+        display: flex;
+        width: 100%;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: center;
+    }
+    
+    .container-register form label {
+        margin: 2px;
+    }
+    
+    .container-register form textarea {
+        height: 110px;
+    }
+}

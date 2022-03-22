@@ -1,6 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import { FaLock } from 'react-icons/fa'
+import { FaLock, FaBars } from 'react-icons/fa'
 
 import Logo from '../../assets/logo-pev.png'    
 
@@ -11,7 +11,7 @@ export default function Header(){
                     <img src={Logo} alt='Logo Pev' />
                     <Link to='/'>Associação Maranata</Link>
                 </div>
-                <div>
+                <div className='menu'>
                     <Link to='/'>Home</Link>
                     <Link to='/about'>Quem Somos</Link>
                     <Link to='/projects'>Projetos</Link>
@@ -20,6 +20,9 @@ export default function Header(){
                     <Link to='/contato'>Contato</Link>
                     <Link to='/admin' target='_blank'><FaLock size={15} color='#FFFFFF' /></Link>
                     {/* <Link to='/contato'>Campanhas</Link> */}
+                </div>
+                <div className='bars-menu'>
+                    <button><FaBars size={25} color='#FFFF' /> </button>
                 </div>
             </div>
     )

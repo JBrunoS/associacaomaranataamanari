@@ -10,9 +10,18 @@ import './carousel.css'
 import './style.css'
 import api from '../../services/api'
 
-import kids2 from '../../assets/kidsto.jpg'
-import kids1 from '../../assets/kids.jpg'
+
 import team from '../../assets/team.jpg'
+
+
+import about from '../../assets/about.JPG'
+import image1 from '../../assets/image1.JPG'
+import image2 from '../../assets/image2.JPG'
+import image3 from '../../assets/image3.JPG'
+import image4 from '../../assets/image4.jpg'
+import image5 from '../../assets/image5.JPG'
+import image6 from '../../assets/image6.JPG'
+
 import { Link, useNavigate } from 'react-router-dom'
 import Header from '../../components/header';
 import Footer from '../../components/footer';
@@ -101,13 +110,19 @@ export default function Home() {
                         interval={4500}
                     >
                         <div>
-                            <img src={team} alt='imagem' />
+                            <img src={image1} alt='imagem' />
                         </div>
                         <div>
-                            <img src={kids1} alt='imagem' />
+                            <img src={image2} alt='imagem' />
                         </div>
                         <div>
-                            <img src={kids2} alt='imagem' />
+                            <img src={image3} alt='imagem' />
+                        </div>
+                        <div>
+                            <img src={image5} alt='imagem' />
+                        </div>
+                        <div>
+                            <img src={image6} alt='imagem' />
                         </div>
                     </Carousel>
                     <div className='button'>
@@ -129,7 +144,7 @@ export default function Home() {
                         <button onClick={goToHistory} >Saber Mais</button>
                     </div>
                     <div>
-                        <img src={kids2} alt='imagem' />
+                        <img src={about} alt='imagem' />
                     </div>
 
                 </div>
@@ -142,12 +157,8 @@ export default function Home() {
                             <div className='card' onClick={() => goToDetails(incidents.id)} key={incidents.id} >
                                 
                                 <div className='image-card'>
-                                    {imagens ? <img src={imagens} alt={index}/> : <img src={kids1} alt='kids' />}
+                                    {imagens ? <img src={imagens} alt={index}/> : <img src={image1} alt='kids' />}
                                 </div>
-
-                                {(() =>  {
-                                    alert()
-                                })}
 
                                 <div className='description-card'>
                                     <h3>{incidents.atividade + '/' + incidents.local}</h3>
@@ -229,6 +240,8 @@ export default function Home() {
                 <div className='partners'>
                     <span>Parceiros</span>
                     <div>
+                        <img src={team} alt='team' />
+                        <img src={team} alt='team' />
                         <img src={team} alt='team' />
                         <img src={team} alt='team' />
                         <img src={team} alt='team' />

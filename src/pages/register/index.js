@@ -7,7 +7,7 @@ import './style.css'
 import api from "../../services/api";
 
 export default function Register() {
-    
+
     const [atividade, setAtividade] = useState('')
     const [descricao, setDescricao] = useState('')
     const [area, setArea] = useState('')
@@ -18,14 +18,14 @@ export default function Register() {
     const [files, setFiles] = useState([])
     const previewImg = []
     const previewFile = []
-    
+
     const navigate = useNavigate();
 
     useEffect(() => {
         loadPreview();
     }, [imagens])
 
-    function loadPreview(){
+    function loadPreview() {
         if (imagens.length > 0) {
             for (let i = 0; i < imagens.length; i++) {
                 previewImg.push(imagens[i])
@@ -38,8 +38,7 @@ export default function Register() {
         e.preventDefault();
 
         const dataImage = new FormData();
-
-        
+        let id = '';
 
         const values = {
             atividade,
@@ -62,28 +61,28 @@ export default function Register() {
 
             if (files.length > 0 && files.length <= 15) {
                 await api.post('/post', values)
-                .then(response => {
-                    for (let i = 0; i < files.length; i++) {
-                        dataImage.append('file', files[i])
-                        api.post(`/post/${response.data[0].id}`, dataImage)   
-                        dataImage.delete('file', files[i]) 
-                    }
-                    
-                    alert('Postagem Adicionada com sucesso!')
-                })
-            }else {
+                    .then(response => {
+                        for (let i = 0; i < files.length; i++) {
+                            dataImage.append('file', files[i])
+                            api.post(`/post/${response.data[0].id}`, dataImage)
+                            dataImage.delete('file', files[i])
+                        }
+                        id = response.data[0].id;
+
+                        alert('Postagem Adicionada com sucesso!')
+                    })
+            } else {
                 if (files.length <= 0) {
-                    alert("Selecionar alguma foto!")    
+                    alert("Selecionar alguma foto!")
                     return
                 }
 
-                if(files.length > 15) {
+                if (files.length > 15) {
                     alert("O máximo de fotos permitido é 15!")
                     return
                 }
             }
 
-            
             setAtividade('')
             setDescricao('')
             setData('')
@@ -92,9 +91,14 @@ export default function Register() {
             setLocal('')
             setImagens([])
 
+            try {
+                await api.post(`publicacao/${id}`)    
+            } catch (error) {
+                alert(error)
+            }
+            
             navigate('/admin');
 
-            
         } catch (error) {
             alert(error)
         }
@@ -102,8 +106,8 @@ export default function Register() {
 
     }
 
-    function deleteImagem(name){
-        
+    function deleteImagem(name) {
+
         for (let i = 0; i < files.length; i++) {
             previewFile.push(files[i])
             if (files[i].name === name) {

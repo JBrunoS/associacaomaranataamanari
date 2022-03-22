@@ -1,8 +1,10 @@
 import React from 'react'
+import { Carousel } from 'react-responsive-carousel'
 
 import './style.css'
+import '../Home/carousel.css'
 
-import team from '../../assets/team.jpg'
+import about from '../../assets/about.JPG'
 import Header from '../../components/header'
 import Footer from '../../components/footer'
 
@@ -50,7 +52,30 @@ export default function About() {
                     </div>
 
                     <div className='picture'>
-                        <img src={team} alt='Team' />
+                    <Carousel
+                        autoPlay
+                        showThumbs={false}
+                        infiniteLoop
+                        stopOnHover={false}
+                        interval={4500}
+                    >
+                        <div>
+                            <img src={about} alt='imagem' />
+                        </div>
+                        <div>
+                            <img src={about} alt='imagem' />
+                        </div>
+                        <div>
+                            <img src={about} alt='imagem' />
+                        </div>
+                        <div>
+                            <img src={about} alt='imagem' />
+                        </div>
+                        <div>
+                            <img src={about} alt='imagem' />
+                        </div>
+                    </Carousel>
+                        
                     </div>
 
                 </div>

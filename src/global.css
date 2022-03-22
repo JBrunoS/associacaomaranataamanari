@@ -45,13 +45,24 @@ body {
     padding-left: 40px;
 }
 
-.header div + div {
+.header .menu {
     width: 65%;
     height: 100%;
     display: flex;
     align-items: center;
     justify-content: flex-end;
     padding-right: 30px;
+}
+
+.header .bars-menu {
+    width: 0%;
+    visibility: hidden;
+}
+
+.header .bars-menu button {
+    border: none;
+    background-color: transparent;
+    visibility: hidden;
 }
 
 .header img {
@@ -92,3 +103,56 @@ body {
     text-align: center;
 }
 
+@media only screen and (max-width: 768px){
+    .header {
+        
+        height: 70px;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        
+    }
+    .header .menu{
+        display: none;
+    }
+
+    .header div {
+        width: auto;
+        display: flex;
+        
+        align-items: center;
+        justify-content: flex-start;
+        padding-left: 0px;
+    }
+
+    .header .bars-menu {
+        width: 15%;
+        visibility: visible;
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        margin-right: 10px;
+    }
+
+    .header .bars-menu button {
+        border: none;
+        background-color: transparent;
+        visibility: visible;
+    }
+
+    .header img {
+        width: 50px;
+        margin-left: 20px;
+    }
+    
+    .header a {
+        padding: 10px;
+        text-decoration: none;
+        color: #FFF;
+        font-weight: 300;
+        font-size: 20px;
+        margin:0px ;
+        -webkit-text-size-adjust: 20%;
+    }
+}

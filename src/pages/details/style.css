@@ -100,3 +100,71 @@
     right: 2%;
     cursor: pointer;
 }
+
+@media only screen and (max-width: 768px){
+    
+    .description {
+        width: 100%;
+    }
+    
+    .grid {
+        width: 90%;
+        
+        display: flex;
+        flex-direction: column;
+        margin: 0px auto 30px;
+        align-items: center;
+        justify-items: center;
+        
+    }
+    
+    .modal{
+        margin: 100% 50% 0;
+        width: 100%;
+        height: auto;
+        background-color: rgba(0, 0, 0, 0.74);
+        margin-right: 0px;
+        transform: translate(-50%, -50%);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 10px;
+    }
+    
+    .modal img {
+        width: 100%;
+        height: auto;
+    }
+    
+    .modal button {
+        background-color: transparent;
+        border: none;
+        width: auto;
+        height: auto;
+        position: absolute;
+        top: 5%;
+        right: 2%;
+        cursor: pointer;
+    }
+    
+    .modal .left {
+        background-color: transparent;
+        border: none;
+        width: auto;
+        height: auto;
+        position: absolute;
+        top: 50%;
+        left: -90%;
+        cursor: pointer;
+    }
+    .modal .right {
+        background-color: transparent;
+        border: none;
+        width: auto;
+        height: auto;
+        position: absolute;
+        top: 50%;
+        right: 2%;
+        cursor: pointer;
+    }
+}

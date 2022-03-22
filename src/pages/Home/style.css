@@ -34,6 +34,22 @@
     box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.25);
 }
 
+@media only screen and (max-width: 768px){
+    .body .projects {
+        height: 250px;
+    }
+
+    /* .body .projects .button {
+        position: absolute;
+        bottom: 20%;
+        width: 100%;
+        background-color: transparent;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    } */
+}
+
 .body .about {
     width: 80%;
     height: 600px;
@@ -80,6 +96,44 @@
     width: 90%;
 }
 
+@media only screen and (max-width: 768px){
+    .body .about {
+        width: 100%;
+        height: auto;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-indent: 30px;
+        
+        margin-top: 20px;
+    }
+    
+    .body .about div {
+        width: 100%;
+        height: 100%;
+        text-align: justify;
+        padding: 20px;
+    }
+
+    .body .about div p {
+        padding: 20px;
+    }
+
+    .body .about div:first-child {
+        justify-content: space-around;
+    }
+    
+    .body .about div button{
+        width: 70%;
+        font-size: 18px;
+    }
+    
+    .body .about div:last-child img {
+        width: 90%;
+    } 
+}
+
 .body .activities {
     width: 100%;
     height: 600px;
@@ -114,10 +168,6 @@
     border-radius: 6px;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     cursor: pointer;
-    
-}
-
-.body .activities .card:hover {
     
 }
 
@@ -156,6 +206,28 @@
     font-size: 16px;
 }
 
+@media only screen and (max-width: 768px){
+    .body .activities {
+        height: auto;
+    }
+    
+    .body .activities .cards {
+        width: 100%;
+        flex-direction: column;
+    }
+    
+    .body .activities .card {
+        width: 80%;
+    }
+    
+    
+    
+    .body .activities button{
+        width: 60%;
+        font-size: 18px;
+    }
+}
+
 .body .titulos{
     width: 100%;
     height: 220px;
@@ -183,6 +255,23 @@
     opacity: 1;
 }
 
+@media only screen and (max-width: 768px){
+    
+
+    .body .titulos div{
+        width: 90%;
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        overflow-y: scroll;
+    }
+    
+    .body .titulos div img {
+        
+        opacity: 1;
+    }
+}
+
 .body .partners{
     width: 100%;
     height: 150px;
@@ -208,6 +297,22 @@
 .body .partners div img:hover {
     /* width: 130px; */
     opacity: 1;
+}
+
+@media only screen and (max-width: 768px){
+    .body .partners div{
+        width: 90%;
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        overflow-y: scroll;
+    }
+    
+    .body .partners div img {
+        width: 100px;
+        opacity: 1;
+    }
+    
 }
 
 .body .contact {
@@ -329,6 +434,108 @@
 .body .contact p{
     font: 500 18px Roboto, sans-serif;
     text-align: center;
+}
+
+@media only screen and (max-width: 768px){
+    .body .contact {
+        
+        height: auto;
+    }
+    
+    .body .contact div {
+        width: 90%;
+        height: auto;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        
+    }
+    
+    .body .contact .form {
+        width: 100%;
+        display: flex;
+        
+        align-items: center;
+        justify-content: center;
+    }
+    
+    .body .contact .form h2 {
+        margin: 20px auto;
+    }
+    .body .contact .info {
+        width: 100%;
+        
+    }
+    
+    .body .contact .info h2 {
+        font-size: 20px;
+    }
+    
+    .body .contact .info p {
+        margin: 0px auto 10px;
+    }
+    
+    .body .contact .info .agency {
+        width: 100%;   
+    }
+
+    
+    .body .contact div div:first-child {
+        border-right: 0px;
+        border-bottom: 1px solid #c4c4c4;
+        margin-bottom: 20px;
+    }
+    
+    .body .contact div .form form {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    .body .contact div .form form input{
+        width: 90%;
+        height: 40px;
+        border-radius: 6px;
+        margin-bottom: 15px;
+        border: 0;
+        box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.25);
+        padding-left: 10px;
+        font: 400 16px Roboto, sans-serif;
+    }
+    
+    .body .contact div .form form textarea{
+        width: 90%;
+        height: 180px;
+        border-radius: 6px;
+        margin-bottom: 15px;
+        border: 0;
+        box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.25);
+        resize: none;
+        padding: 10px 10px;
+        font: 400 16px Roboto, sans-serif;
+        
+    }
+    
+    .body .contact div .form form button{
+        width: 90%;
+        height: 35px;
+        border: 0;
+        border-radius: 6px;
+        margin-bottom: 5%;
+        background-color: #743ED4;
+        color: #FFF;
+        box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+        cursor: pointer;
+        font-size: 16px;
+    }
+    
+    .body .contact p{
+        font: 500 18px Roboto, sans-serif;
+        text-align: center;
+    }
 }
 
 

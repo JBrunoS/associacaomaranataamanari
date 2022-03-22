@@ -7,10 +7,10 @@ import Projects from '../src/pages/projetos'
 import Activities from '../src/pages/activities'
 import Contato from '../src/pages/contact'
 import Details from '../src/pages/details'
-import Header from "./pages/header";
 import Login from "./pages/login";
 import Admin from "./pages/admin";
 import Register from "./pages/register";
+import EditPost from './pages/editPost';
 
 
 export default function Rotas(){
@@ -27,6 +27,7 @@ export default function Rotas(){
                 <Route path='/login' exact element={<Login />} />
                 <Route path='/admin' exact element={<Admin />} />
                 <Route path='/register' exact element={<Register />} />
+                <Route path='/edit' exact element={<EditPost />} />
                 
             </Routes>
         </BrowserRouter>

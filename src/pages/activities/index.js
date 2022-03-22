@@ -1,13 +1,45 @@
-import React from 'react'
-import { FaInstagram, FaYoutube, FaFacebook, FaWhatsapp } from 'react-icons/fa'
+import React, { useState, useEffect } from 'react'
+import { useNavigate } from 'react-router-dom'
 
 import './style.css'
 
 import kids1 from '../../assets/kidsto.jpg'
-import kids2 from '../../assets/kids.jpg'
-import Header from '../header'
+import Header from '../../components/header'
+import api from '../../services/api'
+import Footer from '../../components/footer'
 
 export default function About() {
+    const [incidents, setIncidents] = useState([])
+    const [imagens, setImagens] = useState([])
+
+    const navigate = useNavigate()
+
+    async function handleIncidents() {
+        try {
+            await api.get('/all/posts')
+                .then(response => {
+                    setIncidents(response.data)
+                    for (let index = 0; index < response.data.length; index++) {
+                        api.get(`/image/${response.data[index].id}`)
+                            .then(response => {
+                                setImagens(response.data)
+                            })
+                    }
+                })
+        } catch (error) {
+            alert(error)
+        }
+    }
+
+    function goToDetails(id) {
+        localStorage.setItem("post_id", id);
+        navigate('/details')
+    }
+
+    useEffect(() => {
+        handleIncidents();
+    }, [])
+
     return (
         <div className="container">
             <Header />
@@ -16,70 +48,26 @@ export default function About() {
                     <span>Últimas Atividades</span>
 
                     <div className='cards'>
-                        <div className='card'>
+                        {incidents.map((incidents, index) => (
+                            <div className='card' key={incidents.id} onClick={() => goToDetails(incidents.id)} >
 
-                            <div>
-                                <img src={kids2} alt='imagem' />
+                                <div>
+                                    <img src={kids1} alt='imagem' />
+
+                                </div>
+                                <div>
+                                    <p>{incidents.atividade + '-' + incidents.local}</p>
+                                    <p>{incidents.data}</p>
+                                </div>
                             </div>
-                            <div>
-                                <p>Descrição da Atividade</p>
-                                <p>22/01/2022</p>
-                            </div>
-                        </div>
-                        <div className='card'>
-                            <div>
-                                <img src={kids2} alt='imagem' />
-                            </div>
-                            <div>
-                                <p>Descrição da Atividade</p>
-                                <p>22/01/2022</p>
-                            </div>
-                        </div>
-                        <div className='card'>
-                            <div>
-                                <img src={kids1} alt='imagem' />
-                            </div>
-                            <div>
-                                <p>Descrição da Atividade</p>
-                                <p>22/01/2022</p>
-                            </div>
-                        </div>
-                        <div className='card'>
-                            <div>
-                                <img src={kids1} alt='imagem' />
-                            </div>
-                            <div>
-                                <p>Descrição da Atividade</p>
-                                <p>22/01/2022</p>
-                            </div>
-                        </div>
-                        <div className='card'>
-                            <div>
-                                <img src={kids1} alt='imagem' />
-                            </div>
-                            <div>
-                                <p>Descrição da Atividade</p>
-                                <p>22/01/2022</p>
-                            </div>
-                        </div>
+                        ))}
+
+
                     </div>
                 </div>
-                <div className='social-media'>
-                    <a href='https://www.instagram.com/projeto_pev/' target='_blank' rel="noreferrer" ><FaInstagram size={60} color='#000000' /></a>
-                    <a href='www.instagram.com' target='_blank' rel="noreferrer"><FaFacebook size={60} color='#000000' /></a>
-                    <a href='https://www.youtube.com/channel/UCmHphXPxiwLZjYW7me1Og-w' target='_blank' rel="noreferrer"><FaYoutube size={60} color='#000000' /></a>
-                    <a href='https://api.whatsapp.com/send?phone=5585987306182&text=Olá' target='_blank' rel="noreferrer"><FaWhatsapp size={60} color='#000000' /></a>
-                </div>
             </div>
-
-            <footer>
-                <div>
-                    <p>Associação Maranata de Desenvolvimento Social</p>
-                    <p>associacao@gmail.com</p>
-                    <p>(085) 98877-6655 / (085) 98877-6655</p>
-                    <p>&copy; 2022 Maranata</p>
-                </div>
-            </footer>
+            <Footer />
+            
         </div>
     )
 }

@@ -1,15 +1,40 @@
-import React from 'react'
-import { FaInstagram, FaYoutube, FaFacebook, FaWhatsapp } from 'react-icons/fa'
+import React, {useState} from 'react'
+
 import {
     StaticGoogleMap,
     Marker,
 } from 'react-static-google-map';
-import Header from '../header';
+import Header from '../../components/header';
 
 import './style.css'
+import api from '../../services/api'
+import Footer from '../../components/footer';
 
 
 export default function Contact() {
+    const [nome, setNome] = useState('')
+    const [email, setEmail] = useState('')
+    const [mensagem, setMensagem] = useState('')
+
+    async function handleSendMessage(e) {
+        e.preventDefault();
+
+        const data = { nome, email, mensagem }
+
+        try {
+            await api.post('/messages', data)
+
+            setNome('')
+            setEmail('')
+            setMensagem('')
+
+            alert("Mensagem Enviada!")
+        } catch (error) {
+            console.log(error)
+        }
+
+    }
+
     return (
         <div className="container">
             <Header />
@@ -19,12 +44,30 @@ export default function Contact() {
                     <span>Fala com a gente!</span>
 
                     <div className='form'>
-                        <form>
-                            <input type='text' placeholder='Nome Completo' />
-                            <input type='email' placeholder='E-mail' />
-                            <textarea maxLength={200} placeholder='Digite sua mensagem' />
-                            <button>Enviar Mensagem</button>
-                        </form>
+                    <form onSubmit={handleSendMessage}>
+                                <input
+                                    type='text'
+                                    placeholder='Nome Completo'
+                                    required
+                                    value={nome}
+                                    onChange={e => setNome(e.target.value)}
+                                />
+                                <input
+                                    type='email'
+                                    placeholder='Email'
+                                    required
+                                    value={email}
+                                    onChange={e => setEmail(e.target.value)}
+                                />
+                                <textarea
+                                    maxLength={255}
+                                    placeholder='Digite Sua Mensagem'
+                                    required
+                                    value={mensagem}
+                                    onChange={e => setMensagem(e.target.value)}
+                                />
+                                <button>Enviar</button>
+                            </form>
                     </div>
 
                     <div className='info'>
@@ -57,23 +100,8 @@ export default function Contact() {
                         </div>
                     </div>
                 </div>
-
-                <div className='social-media'>
-                    <a href='https://www.instagram.com/projeto_pev/' target='_blank' rel="noreferrer" ><FaInstagram size={60} color='#000000' /></a>
-                    <a href='www.instagram.com' target='_blank' rel="noreferrer"><FaFacebook size={60} color='#000000' /></a>
-                    <a href='https://www.youtube.com/channel/UCmHphXPxiwLZjYW7me1Og-w' target='_blank' rel="noreferrer"><FaYoutube size={60} color='#000000' /></a>
-                    <a href='https://api.whatsapp.com/send?phone=5585987306182&text=Olá' target='_blank' rel="noreferrer"><FaWhatsapp size={60} color='#000000' /></a>
-                </div>
             </div>
-
-            <footer>
-                <div>
-                    <p>Associação Maranata de Desenvolvimento Social</p>
-                    <p>associacao@gmail.com</p>
-                    <p>(085) 98877-6655 / (085) 98877-6655</p>
-                    <p>&copy; 2022 Maranata</p>
-                </div>
-            </footer>
+        <Footer />
         </div>
     )
 }

@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from "react";
-import { FaTrashAlt } from 'react-icons/fa'
+
 import { useNavigate } from "react-router-dom";
 
 import './style.css'
 
 import api from "../../services/api";
 
-export default function Register() {
+export default function EditPost() {
     
     const [atividade, setAtividade] = useState('')
     const [descricao, setDescricao] = useState('')
@@ -14,30 +14,36 @@ export default function Register() {
     const [data, setData] = useState('')
     const [projeto, setProjeto] = useState('')
     const [local, setLocal] = useState('')
-    const [imagens, setImagens] = useState([])
-    const [files, setFiles] = useState([])
-    const previewImg = []
-    const previewFile = []
+    
+    const [incidents, setIncidents] = useState([])
     
     const navigate = useNavigate();
 
     useEffect(() => {
-        loadPreview();
-    }, [imagens])
+        handleIncidents();
+    }, [])
 
-    function loadPreview(){
-        if (imagens.length > 0) {
-            for (let i = 0; i < imagens.length; i++) {
-                previewImg.push(imagens[i])
-            }
+    async function handleIncidents(){
+        try {
+            await api.get(`/posts/${localStorage.getItem('user_id')}`)
+            .then(response => {
+                console.log(response.data[0])
+                setAtividade(response.data[0].atividade)
+                setDescricao(response.data[0].descricao)
+                setArea(response.data[0].area)
+                setData(response.data[0].data)
+                setProjeto(response.data[0].projeto)
+                setLocal(response.data[0].local)
+
+                setIncidents(response.data)
+            })
+        } catch (error) {
+            alert(error)
         }
-        setFiles(previewImg)
     }
 
-    async function handleRegister(e) {
+    async function handleEdit(e) {
         e.preventDefault();
-
-        const dataImage = new FormData();
 
         
 
@@ -53,36 +59,8 @@ export default function Register() {
 
         try {
 
-            for (let index = 0; index < files.length; index++) {
-                if (files[index].size > (2 * 1024 * 1024)) {
-                    alert('A Foto nº ' + (index + 1) + ' é maior que 2 megas')
-                    return
-                }
-            }
-
-            if (files.length > 0 && files.length <= 15) {
-                await api.post('/post', values)
-                .then(response => {
-                    for (let i = 0; i < files.length; i++) {
-                        dataImage.append('file', files[i])
-                        api.post(`/post/${response.data[0].id}`, dataImage)   
-                        dataImage.delete('file', files[i]) 
-                    }
-                    
-                    alert('Postagem Adicionada com sucesso!')
-                })
-            }else {
-                if (files.length <= 0) {
-                    alert("Selecionar alguma foto!")    
-                    return
-                }
-
-                if(files.length > 15) {
-                    alert("O máximo de fotos permitido é 15!")
-                    return
-                }
-            }
-
+            await api.put(`/edit/post/${localStorage.getItem('user_id')}`, values)
+            alert("Alterado com sucesso!")
             
             setAtividade('')
             setDescricao('')
@@ -90,34 +68,21 @@ export default function Register() {
             setArea('')
             setProjeto('')
             setLocal('')
-            setImagens([])
 
             navigate('/admin');
 
             
         } catch (error) {
-            alert(error)
+            console.log(error)
         }
 
 
     }
 
-    function deleteImagem(name){
-        
-        for (let i = 0; i < files.length; i++) {
-            previewFile.push(files[i])
-            if (files[i].name === name) {
-                previewFile.pop(files[i])
-            }
-
-            previewImg.push(previewFile)
-        }
-
-        setFiles(previewFile)
-    }
     return (
         <div className='container-register'>
-            <form onSubmit={handleRegister}>
+            
+            <form onSubmit={handleEdit}>
                 <div>
                     <label>Nome da Atividade</label>
                     <input
@@ -174,28 +139,17 @@ export default function Register() {
                         onChange={e => setLocal(e.target.value)}
                     />
                 </div>
-                <div>
-                    <label>Imagens</label>
-                    <input
-                        required
-                        type='file'
-                        multiple
-                        accept='image/*'
-                        onChange={e => setImagens(e.target.files)}
-                    />
-                </div>
+                
 
-                <button>Salvar postagem</button>
+                <button>Editar postagem</button>
             </form>
 
             <div className='photos'>
                 {
-                    files.map((incidents => (
-                        <div className='card-photos' key={incidents.name}>
-                            <img src={URL.createObjectURL(incidents)} alt='imagem' />
-                            <div onClick={() => deleteImagem(incidents.name)}>
-                                <FaTrashAlt size={15} color='#db2020' />
-                            </div>
+                    incidents.map((incidents => (
+                        <div className='card-photos' key={incidents}>
+                            <img src={incidents.url} alt='imagem' />
+                            
 
                         </div>
                     )))

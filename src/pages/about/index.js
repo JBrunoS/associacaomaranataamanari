@@ -1,10 +1,10 @@
 import React from 'react'
-import { FaInstagram, FaYoutube, FaFacebook, FaWhatsapp } from 'react-icons/fa'
 
 import './style.css'
 
 import team from '../../assets/team.jpg'
-import Header from '../header'
+import Header from '../../components/header'
+import Footer from '../../components/footer'
 
 export default function About() {
     return (
@@ -54,22 +54,10 @@ export default function About() {
                     </div>
 
                 </div>
-                <div className='social-media'>
-                    <a href='https://www.instagram.com/projeto_pev/' target='_blank' rel="noreferrer" ><FaInstagram size={60} color='#000000' /></a>
-                    <a href='www.instagram.com' target='_blank' rel="noreferrer"><FaFacebook size={60} color='#000000' /></a>
-                    <a href='https://www.youtube.com/channel/UCmHphXPxiwLZjYW7me1Og-w' target='_blank' rel="noreferrer"><FaYoutube size={60} color='#000000' /></a>
-                    <a href='https://api.whatsapp.com/send?phone=5585987306182&text=Olá' target='_blank' rel="noreferrer"><FaWhatsapp size={60} color='#000000' /></a>
-                </div>
+                
             </div>
 
-            <footer>
-                <div>
-                    <p>Associação Maranata de Desenvolvimento Social</p>
-                    <p>associacao@gmail.com</p>
-                    <p>(085) 98877-6655 / (085) 98877-6655</p>
-                    <p>&copy; 2022 Maranata</p>
-                </div>
-            </footer>
+            <Footer />
         </div>
     )
 }

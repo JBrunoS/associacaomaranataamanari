@@ -94,3 +94,9 @@
     margin: 5px;
     cursor: pointer;
 }
+
+.container-register form input[type="file" i] {
+    
+    color: #FFFFFF;
+    
+}

@@ -1,5 +1,5 @@
-import React from 'react'
-import { FaInstagram, FaYoutube, FaFacebook, FaWhatsapp } from 'react-icons/fa'
+import React, { useEffect, useState } from 'react'
+
 import { Carousel } from 'react-responsive-carousel'
 import {
     StaticGoogleMap,
@@ -8,17 +8,71 @@ import {
 
 import './carousel.css'
 import './style.css'
+import api from '../../services/api'
 
 import kids2 from '../../assets/kidsto.jpg'
 import kids1 from '../../assets/kids.jpg'
 import team from '../../assets/team.jpg'
 import { Link, useNavigate } from 'react-router-dom'
-import Header from '../header';
+import Header from '../../components/header';
+import Footer from '../../components/footer';
 
 export default function Home() {
-
+    const [incidents, setIncidents] = useState([])
+    const [imagens, setImagens] = useState([])
     const navigate = useNavigate()
+    const positions = [];
 
+    const [nome, setNome] = useState('')
+    const [email, setEmail] = useState('')
+    const [mensagem, setMensagem] = useState('')
+
+    async function handleSendMessage(e) {
+        e.preventDefault();
+
+        const data = { nome, email, mensagem }
+
+        try {
+            await api.post('/messages', data)
+
+            setNome('')
+            setEmail('')
+            setMensagem('')
+
+            alert("Mensagem Enviada!")
+        } catch (error) {
+            console.log(error)
+        }
+
+    }
+
+    async function handleIncidents() {
+
+        try {
+            await api.get('/posts')
+                .then(response => {
+                    setIncidents(response.data);
+
+                    for (let index = 0; index < response.data.length; index++) {
+                        api.get(`/image/${response.data[index].id}`)
+                            .then(response => {
+                                positions.push(...response.data)
+                            })
+                    }
+                    setImagens(positions);
+                })
+        } catch (error) {
+            alert(error)
+        }
+
+        positions.push(...incidents)
+        
+        console.log(positions) 
+    }
+
+    useEffect(() => {
+        handleIncidents();
+    }, [])
 
     function goToHistory() {
         navigate('/about')
@@ -28,7 +82,8 @@ export default function Home() {
         navigate('/activities')
     }
 
-    function goToDetails() {
+    function goToDetails(id) {
+        localStorage.setItem("post_id", id);
         navigate('/details')
     }
 
@@ -69,7 +124,7 @@ export default function Home() {
                             na cidade de Maranguape, cujo registro do seu Estatuto encontra-se no cartório Paula Costa,
                             é uma instiutição Civil, autônoma, com fins não econômicos e, com personalidade jurídica de direito privado de duração indeterminada, com sede e foro
                             neste município, capital Fortaleza. Associação Maranata desenvolve diversas ativiades nas áres assistenciais, saúde, educacional e sócio-cultural, através de ações próprias, por meio de assessorias técnicas e por intermédio de gestões políticas administrativas
-                            junto a instituições governamentais e não governamentais.  
+                            junto a instituições governamentais e não governamentais.
                         </p>
                         <button onClick={goToHistory} >Saber Mais</button>
                     </div>
@@ -82,36 +137,25 @@ export default function Home() {
                     <span>Atividades</span>
 
                     <div className='cards'>
-                        <div className='card' onClick={goToDetails}>
-                            <div className='image-card'>
-                                <img src={kids2} alt='imagem' />
-                            </div>
 
-                            <div className='description-card'>
-                                <h3>Descrição da Atividade</h3>
-                                <p>22/01/2022</p>
-                            </div>
-                        </div>
-                        <div className='card' onClick={goToDetails}>
-                            <div className='image-card'>
-                                <img src={kids1} alt='imagem' />
-                            </div>
+                        {incidents.map((incidents, index) => (
+                            <div className='card' onClick={() => goToDetails(incidents.id)} key={incidents.id} >
+                                
+                                <div className='image-card'>
+                                    {imagens ? <img src={imagens} alt={index}/> : <img src={kids1} alt='kids' />}
+                                </div>
 
-                            <div className='description-card'>
-                                <h3>Descrição da Atividade</h3>
-                                <p>22/01/2022</p>
-                            </div>
-                        </div>
-                        <div className='card' onClick={goToDetails}>
-                            <div className='image-card'>
-                                <img src={kids2} alt='imagem' />
-                            </div>
+                                {(() =>  {
+                                    alert()
+                                })}
 
-                            <div className='description-card'>
-                                <h3>Descrição da Atividade</h3>
-                                <p>22/01/2022</p>
+                                <div className='description-card'>
+                                    <h3>{incidents.atividade + '/' + incidents.local}</h3>
+                                    <p>{incidents.data}</p>
+                                </div>
                             </div>
-                        </div>
+                        ))}
+
                     </div>
 
                     <button onClick={goToActivities} >Ver todas as Atividades</button>
@@ -127,15 +171,33 @@ export default function Home() {
                 </div>
 
                 <div className='contact'>
-                    <span>Contato</span>
+                    <span>Contato - Seja um Parceiro</span>
                     <div>
                         <div className='form'>
                             <h2>Fale com a gente!</h2>
-                            <form>
-                                <input type='text' placeholder='Nome Completo' />
-                                <input type='email' placeholder='Email' />
-                                <textarea maxLength={200} placeholder='Digite Sua Mensagem' />
-                                <button type='button'>Enviar</button>
+                            <form onSubmit={handleSendMessage}>
+                                <input
+                                    type='text'
+                                    placeholder='Nome Completo'
+                                    required
+                                    value={nome}
+                                    onChange={e => setNome(e.target.value)}
+                                />
+                                <input
+                                    type='email'
+                                    placeholder='Email'
+                                    required
+                                    value={email}
+                                    onChange={e => setEmail(e.target.value)}
+                                />
+                                <textarea
+                                    maxLength={255}
+                                    placeholder='Digite Sua Mensagem'
+                                    required
+                                    value={mensagem}
+                                    onChange={e => setMensagem(e.target.value)}
+                                />
+                                <button>Enviar</button>
                             </form>
                         </div>
                         <div className='info'>
@@ -173,23 +235,9 @@ export default function Home() {
                     </div>
 
                 </div>
-
-                <div className='social-media'>
-                    <a href='https://www.instagram.com/projeto_pev/' target='_blank' rel="noreferrer" ><FaInstagram size={60} color='#000000' /></a>
-                    <a href='www.instagram.com' target='_blank' rel="noreferrer"><FaFacebook size={60} color='#000000' /></a>
-                    <a href='https://www.youtube.com/channel/UCmHphXPxiwLZjYW7me1Og-w' target='_blank' rel="noreferrer"><FaYoutube size={60} color='#000000' /></a>
-                    <a href='https://api.whatsapp.com/send?phone=5585987306182&text=Olá' target='_blank' rel="noreferrer"><FaWhatsapp size={60} color='#000000' /></a>
-                </div>
             </div>
 
-            <footer>
-                <div>
-                    <p>Associação Maranata de Desenvolvimento Social</p>
-                    <p>associacao@gmail.com</p>
-                    <p>(085) 98877-6655 / (085) 98877-6655</p>
-                    <p>&copy; 2022 Maranata</p>
-                </div>
-            </footer>
+            <Footer />
         </div>
     )
 }

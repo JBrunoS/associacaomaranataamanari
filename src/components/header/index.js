@@ -18,7 +18,7 @@ export default function Header(){
                     <Link to='/activities'>Atividades</Link>
                     {/* <Link to='/details'>Títulos e Reconhecimento</Link> */}
                     <Link to='/contato'>Contato</Link>
-                    <Link to='/login'><FaLock size={15} color='#FFFFFF' /></Link>
+                    <Link to='/admin' target='_blank'><FaLock size={15} color='#FFFFFF' /></Link>
                     {/* <Link to='/contato'>Campanhas</Link> */}
                 </div>
             </div>

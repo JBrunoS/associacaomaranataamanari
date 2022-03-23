@@ -15,21 +15,21 @@ export default function Footer() {
                     <FaInstagram size={60} color='#000' />
                 </a>
                 <a
-                    href='www.instagram.com'
+                    href='https://www.facebook.com/profile.php?id=100011723442552'
                     target='_blank'
                     rel="noreferrer"
                 >
-                    <FaFacebook size={60} color='#1877f2' />
+                    <FaFacebook size={60} color='#000' />
                 </a>
                 <a
                     href='https://www.youtube.com/channel/UCmHphXPxiwLZjYW7me1Og-w'
                     target='_blank'
                     rel="noreferrer"
                 >
-                    <FaYoutube size={60} color='#ff0000' />
+                    <FaYoutube size={60} color='#000' />
                 </a>
                 <a
-                    href='https://api.whatsapp.com/send?phone=5585987306182&text=Olá'
+                    href='https://api.whatsapp.com/send?phone=5585987306182&text=Olá, tenho uma pergunta sobre a Associação'
                     target='_blank'
                     rel="noreferrer"
                 >
@@ -59,7 +59,7 @@ export default function Footer() {
                     <FaYoutube size={30} color='#ff0000' />
                 </a>
                 <a
-                    href='https://api.whatsapp.com/send?phone=5585987306182&text=Olá'
+                    href='https://api.whatsapp.com/send?phone=5585988859466&text=Olá'
                     target='_blank'
                     rel="noreferrer"
                 >
@@ -69,8 +69,8 @@ export default function Footer() {
             <footer>
                 <div>
                     <p>Associação Maranata de Desenvolvimento Social</p>
-                    <p>associacao@gmail.com</p>
-                    <p>(085) 98877-6655 / (085) 98877-6655</p>
+                    <p>maranata.itap01@hotmail.com</p>
+                    <p>(085) 98885-9466 / (085) 982071746</p>
                     <p>&copy; 2022 Maranata</p>
                 </div>
             </footer>

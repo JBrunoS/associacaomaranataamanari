@@ -73,17 +73,15 @@ export default function Contact() {
                     <div className='info'>
                         <div className='card-info'>
                             <h2>Associação Maranata de Desenvolvimento Social</h2>
-                            <p>CNPJ: 001099290220111/-010</p>
+                            <p>CNPJ: 24.675.913/0001-76</p>
                             <h2>Dados Bancários:</h2>
                             <div className='agency'>
                                 <div>
-                                    <p>Banco Y <br />Agencia 09192 <br /> Conta: 0928221-0</p>
+                                    <p>Banco PagSeguro <br />Agencia 0001 <br /> Conta: 15846199-6</p>
                                 </div>
-                                <div>
-                                    <p>Banco Y <br />Agencia 09192 <br /> Conta: 0928221-0</p>
-                                </div>
+                                
                             </div>
-                            <p>Pix: 0298737373383/0001-00</p>
+                            <p>Pix: maranata.itap01@hotmail.com</p>
                         </div>
                         <div className='card-info'>
                             <div className='maps'>
@@ -94,7 +92,7 @@ export default function Contact() {
                                 </a>
                             </div>
                             <div>
-                                <p>Endereço Rua Asdjdasdhasd, 988Itapebussu - Mpe - CE - Brasil</p>
+                                <p>Rua Euvaldo Marques, 306 - Itapebussu - Mpe - CE - Brasil</p>
                             </div>
 
                         </div>

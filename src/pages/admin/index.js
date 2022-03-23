@@ -5,7 +5,7 @@ import { useNavigate } from "react-router-dom";
 import './style.css'
 import api from "../../services/api";
 
-import kids1 from '../../assets/kidsto.jpg'
+import capa from '../../assets/capa.JPG'
 
 export default function Admin() {
     const [incidents, setIncidents] = useState([])
@@ -96,7 +96,7 @@ export default function Admin() {
                         <div className='card-admin' key={incidents.id}>
                             <div className='card-img'>
 
-                                <img src={kids1} alt='imagem' />
+                                <img src={capa} alt='imagem' />
 
                             </div>
                             <div className='card-title'>

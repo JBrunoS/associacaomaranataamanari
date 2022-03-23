@@ -28,10 +28,16 @@
     margin-top: 20px;
 }
 
-.project p, li {
+.project p {
     text-align: justify;
     margin: 10px 0px 5px;
-    font: 400 18px Roboto, sans-serif;
+    font: 400 20px Roboto, sans-serif;
+}
+
+.project li {
+    text-align: justify;
+    margin: 10px 0px 5px;
+    font: 400 22px Roboto, sans-serif;
 }
 
 .project .carousel {
@@ -67,10 +73,16 @@
         width: 90%;
     }
     
-    .project p, li {
+    .project p {
         text-align: justify;
         margin: 10px 0px 5px;
-        font: 400 16px Roboto, sans-serif;
+        font: 400 18px Roboto, sans-serif;
+    }
+    
+    .project li {
+        text-align: justify;
+        margin: 10px 0px 5px;
+        font: 400 18px Roboto, sans-serif;
     }
     
     .project .carousel {

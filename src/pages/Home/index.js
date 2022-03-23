@@ -14,13 +14,22 @@ import api from '../../services/api'
 import team from '../../assets/team.jpg'
 
 
+import capa from '../../assets/capa.JPG'
 import about from '../../assets/about.JPG'
 import image1 from '../../assets/image1.JPG'
 import image2 from '../../assets/image2.JPG'
 import image3 from '../../assets/image3.JPG'
-import image4 from '../../assets/image4.jpg'
 import image5 from '../../assets/image5.JPG'
 import image6 from '../../assets/image6.JPG'
+
+import parceiro1 from '../../assets/igreja.png'
+import parceiro2 from '../../assets/dagoberto.jpeg'
+import parceiro3 from '../../assets/escola.jpeg'
+import parceiro4 from '../../assets/menorpreco.jpeg'
+import parceiro5 from '../../assets/cras.gif'
+import parceiro6 from '../../assets/umplay.jpeg'
+import parceiro7 from '../../assets/ubs.jpeg'
+import parceiro8 from '../../assets/compassion.jpeg'
 
 import { Link, useNavigate } from 'react-router-dom'
 import Header from '../../components/header';
@@ -157,7 +166,7 @@ export default function Home() {
                             <div className='card' onClick={() => goToDetails(incidents.id)} key={incidents.id} >
                                 
                                 <div className='image-card'>
-                                    {imagens ? <img src={imagens} alt={index}/> : <img src={image1} alt='kids' />}
+                                    <img src={capa} alt='kids' />
                                 </div>
 
                                 <div className='description-card'>
@@ -171,7 +180,7 @@ export default function Home() {
 
                     <button onClick={goToActivities} >Ver todas as Atividades</button>
                 </div>
-                <div className='titulos'>
+                {/* <div className='titulos'>
                     <span>Títulos e Reconhecimento</span>
                     <div>
                         <img src={team} alt='team' />
@@ -179,7 +188,7 @@ export default function Home() {
                         <img src={team} alt='team' />
                     </div>
 
-                </div>
+                </div> */}
 
                 <div className='contact'>
                     <span>Contato - Seja um Parceiro</span>
@@ -213,17 +222,17 @@ export default function Home() {
                         </div>
                         <div className='info'>
                             <h2>Associação Maranata de Desenvolvimento Social <br />
-                                CNPJ: 001099290220111/10
+                                CNPJ: 24.675.913/0001-76
                             </h2>
                             <p>Rua Euvaldo Marques, 306 <br /> Itapebussu - Mpe - CE - Brasil</p>
 
                             <h2>Dados Bancários</h2>
                             <div className='agency'>
-                                <p>Bradesco <br />Agencia 1579<br />Conta: </p>
-                                <p>Banco X <br />Agencia 0919<br />Conta: 0928282-1</p>
+                                <p>Banco PagSeguro <br />Agencia 0001 <br /> Conta: 15846199-6</p>
+                                {/* <p>Banco X <br />Agencia 0919<br />Conta: 0928282-1</p> */}
                             </div>
 
-                            <p>Pix: 03.326.552/0001-52</p>
+                            <p>Pix: maranata.itap01@hotmail.com</p>
 
                             <div className='map'>
                                 <a href='https://www.google.com/maps/place/Assembleia+de+Deus+Templo+Central/@-4.0272109,-38.930069,17z/data=!4m9!1m2!2m1!1sAssembleia+de+Deus+itapebussu!3m5!1s0x7bf5df0a4dc55f7:0x581facc0eb256889!8m2!3d-4.0268283!4d-38.9273842!15sCh1Bc3NlbWJsZWlhIGRlIERldXMgaXRhcGVidXNzdZIBEHBsYWNlX29mX3dvcnNoaXA' target='_blank' rel="noreferrer">
@@ -240,11 +249,14 @@ export default function Home() {
                 <div className='partners'>
                     <span>Parceiros</span>
                     <div>
-                        <img src={team} alt='team' />
-                        <img src={team} alt='team' />
-                        <img src={team} alt='team' />
-                        <img src={team} alt='team' />
-                        <img src={team} alt='team' />
+                        <img src={parceiro1} alt='parceiros' />
+                        <img src={parceiro8} alt='parceiros' />
+                        <img src={parceiro2} alt='parceiros' />
+                        <img src={parceiro3} alt='parceiros' />
+                        <img src={parceiro4} alt='parceiros' />
+                        <img src={parceiro5} alt='parceiros' />
+                        <img src={parceiro6} alt='parceiros' />
+                        <img src={parceiro7} alt='parceiros' />
                     </div>
 
                 </div>

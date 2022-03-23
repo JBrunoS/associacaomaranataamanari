@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom'
 
 import './style.css'
 
-import kids1 from '../../assets/kidsto.jpg'
+import capa from '../../assets/capa.JPG'
 import Header from '../../components/header'
 import api from '../../services/api'
 import Footer from '../../components/footer'
@@ -44,7 +44,7 @@ export default function About() {
         <div className="container">
             <Header />
             <div className="body">
-                <div className="content">
+                <div className="content-activities">
                     <span>Últimas Atividades</span>
 
                     <div className='cards'>
@@ -52,7 +52,7 @@ export default function About() {
                             <div className='card' key={incidents.id} onClick={() => goToDetails(incidents.id)} >
 
                                 <div>
-                                    <img src={kids1} alt='imagem' />
+                                    <img src={capa} alt='imagem' />
 
                                 </div>
                                 <div>

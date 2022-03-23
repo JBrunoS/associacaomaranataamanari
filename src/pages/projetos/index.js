@@ -36,7 +36,7 @@ export default function Projetos() {
                             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus mattis finibus dui, ac congue mauris tempor eget. Vivamus rhoncus erat eu vestibulum maximus. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Praesent non commodo est. Nulla facilisi. Etiam ornare tortor sit amet est ultrices, sed elementum arcu accumsan. Vestibulum vel felis eu nisi semper laoreet sed non urna. Integer nec pharetra dui, quis mollis enim. Mauris id molestie neque. Sed vitae enim felis. Nam ut bibendum risus. Praesent dignissim interdum tortor eu pellentesque. Proin vel dui vel quam vulputate porta sed ac erat. Nam diam libero, sollicitudin at imperdiet sed, blandit non sem. Donec volutpat, est et ornare consequat, orci elit sollicitudin quam, vel iaculis nibh arcu id massa. Nullam et nibh vitae erat auctor dignissim non at enim.</p>
                         </div>
 
-                        <div className="carousel">
+                        {/* <div className="carousel">
                             <img src={Logo} alt='img' />
                             <img src={Logo} alt='img' />
                             <img src={Logo} alt='img' />
@@ -47,7 +47,7 @@ export default function Projetos() {
                             <img src={Logo} alt='img' />
                             <img src={Logo} alt='img' />
                             <img src={Logo} alt='img' />
-                        </div>
+                        </div> */}
 
                     </div>
 
@@ -74,7 +74,7 @@ export default function Projetos() {
                             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus mattis finibus dui, ac congue mauris tempor eget. Vivamus rhoncus erat eu vestibulum maximus. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Praesent non commodo est. Nulla facilisi. Etiam ornare tortor sit amet est ultrices, sed elementum arcu accumsan. Vestibulum vel felis eu nisi semper laoreet sed non urna. Integer nec pharetra dui, quis mollis enim. Mauris id molestie neque. Sed vitae enim felis. Nam ut bibendum risus. Praesent dignissim interdum tortor eu pellentesque. Proin vel dui vel quam vulputate porta sed ac erat. Nam diam libero, sollicitudin at imperdiet sed, blandit non sem. Donec volutpat, est et ornare consequat, orci elit sollicitudin quam, vel iaculis nibh arcu id massa. Nullam et nibh vitae erat auctor dignissim non at enim.</p>
                         </div>
 
-                        <div className="carousel">
+                        {/* <div className="carousel">
                             <img src={Logo} alt='img' />
                             <img src={Logo} alt='img' />
                             <img src={Logo} alt='img' />
@@ -85,7 +85,7 @@ export default function Projetos() {
                             <img src={Logo} alt='img' />
                             <img src={Logo} alt='img' />
                             <img src={Logo} alt='img' />
-                        </div>
+                        </div> */}
 
                     </div>
                 </div>

@@ -1,5 +1,5 @@
 
-.content-card {
+.content-card-about {
     width: 60%;
     display: flex;
     flex-direction: column;
@@ -9,16 +9,19 @@
     margin: 10px auto 0px;
 }
 
-.content-card p {
-    font: 400 18px Roboto, sans-serif;
+.content-card-about p {
+    font: 400 25px Roboto, sans-serif;
     margin-top: 20px;
     text-align: justify;
     text-indent: 30px;
 }
-.content-card ul {
+.content-card-about ul {
     width: 90%;
     
     margin: 10px auto;
+}
+.content-card-about ul li {
+    font: 300, 20px Roboto, sans-serif;
 }
 .picture {
     width: 100%;
@@ -29,11 +32,11 @@
 }
 
 @media only screen and (max-width: 768px){
-    .content-card {
+    .content-card-about {
         width: 100%;
     }
     
-    .content-card p {
+    .content-card-about p {
         font: 300 18px Roboto, sans-serif;
         
     }

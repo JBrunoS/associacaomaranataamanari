@@ -2,9 +2,14 @@ import React from 'react'
 import { Carousel } from 'react-responsive-carousel'
 
 import './style.css'
-import '../Home/carousel.css'
+import './carousel.css'
 
 import about from '../../assets/about.JPG'
+import equipe1 from '../../assets/equipe1.JPG'
+import equipe2 from '../../assets/equipe2.JPG'
+import equipe3 from '../../assets/equipe3.JPG'
+import equipe4 from '../../assets/equipe4.JPG'
+import equipe5 from '../../assets/equipe5.JPG'
 import Header from '../../components/header'
 import Footer from '../../components/footer'
 
@@ -14,7 +19,7 @@ export default function About() {
             <Header />
             <div className="body">
                 <div className="content">
-                    <div className='content-card'>
+                    <div className='content-card-about'>
                         <span>Nossa História</span>
                         <p>
                             A Associação Maranata de Desenvolvimento Social do Amanari fundada em 25 de Março de 2016
@@ -34,21 +39,13 @@ export default function About() {
                                 </ul>
                         </p>
                     </div>
-                    <div className='content-card'>
+                    <div className='content-card-about'>
                         <span>Missão</span>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus mattis finibus dui, ac congue mauris tempor eget. Vivamus rhoncus erat eu vestibulum maximus. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Praesent non commodo est. Nulla facilisi. Etiam ornare tortor sit amet est ultrices, sed elementum arcu accumsan. Vestibulum vel felis eu nisi semper laoreet sed non urna. Integer nec pharetra dui, quis mollis enim. Mauris id molestie neque. Sed vitae enim felis. Nam ut bibendum risus. Praesent dignissim interdum tortor eu pellentesque. Proin vel dui vel quam vulputate porta sed ac erat. Nam diam libero, sollicitudin at imperdiet sed, blandit non sem. Donec volutpat, est et ornare consequat, orci elit sollicitudin quam, vel iaculis nibh arcu id massa. Nullam et nibh vitae erat auctor dignissim non at enim.</p>
+                        <p>Atuar no terceiro setor com a responsabilidade de defender o direito da criança e do adolescente e promover um ambiente seguro e de bem estar físico, socioemocional, cognitivo e de cidadania da criança e do adolescente atendidos pela nossa associação, desenvolvendo cidadãos responsáveis.</p>
                     </div>
-                    <div className='content-card'>
+                    <div className='content-card-about'>
                         <span>Visão</span>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus mattis finibus dui, ac congue mauris tempor eget. Vivamus rhoncus erat eu vestibulum maximus. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Praesent non commodo est. Nulla facilisi. Etiam ornare tortor sit amet est ultrices, sed elementum arcu accumsan. Vestibulum vel felis eu nisi semper laoreet sed non urna. Integer nec pharetra dui, quis mollis enim. Mauris id molestie neque. Sed vitae enim felis. Nam ut bibendum risus. Praesent dignissim interdum tortor eu pellentesque. Proin vel dui vel quam vulputate porta sed ac erat. Nam diam libero, sollicitudin at imperdiet sed, blandit non sem. Donec volutpat, est et ornare consequat, orci elit sollicitudin quam, vel iaculis nibh arcu id massa. Nullam et nibh vitae erat auctor dignissim non at enim.</p>
-                    </div>
-                    <div className='content-card'>
-                        <span>Metas</span>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus mattis finibus dui, ac congue mauris tempor eget. Vivamus rhoncus erat eu vestibulum maximus. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Praesent non commodo est. Nulla facilisi. Etiam ornare tortor sit amet est ultrices, sed elementum arcu accumsan. Vestibulum vel felis eu nisi semper laoreet sed non urna. Integer nec pharetra dui, quis mollis enim. Mauris id molestie neque. Sed vitae enim felis. Nam ut bibendum risus. Praesent dignissim interdum tortor eu pellentesque. Proin vel dui vel quam vulputate porta sed ac erat. Nam diam libero, sollicitudin at imperdiet sed, blandit non sem. Donec volutpat, est et ornare consequat, orci elit sollicitudin quam, vel iaculis nibh arcu id massa. Nullam et nibh vitae erat auctor dignissim non at enim.</p>
-                    </div>
-                    <div className='content-card'>
-                        <span>Objetivos</span>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus mattis finibus dui, ac congue mauris tempor eget. Vivamus rhoncus erat eu vestibulum maximus. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Praesent non commodo est. Nulla facilisi. Etiam ornare tortor sit amet est ultrices, sed elementum arcu accumsan. Vestibulum vel felis eu nisi semper laoreet sed non urna. Integer nec pharetra dui, quis mollis enim. Mauris id molestie neque. Sed vitae enim felis. Nam ut bibendum risus. Praesent dignissim interdum tortor eu pellentesque. Proin vel dui vel quam vulputate porta sed ac erat. Nam diam libero, sollicitudin at imperdiet sed, blandit non sem. Donec volutpat, est et ornare consequat, orci elit sollicitudin quam, vel iaculis nibh arcu id massa. Nullam et nibh vitae erat auctor dignissim non at enim.</p>
+                        <p>Ser reconhecida como uma das melhores defensoras do direito da criança e do adolescente, defendendo e acompanhando o desenvolvimento individual de cada criança atendida pelos nossos projetos, desenvolvendo cidadãos responsáveis.</p>
                     </div>
 
                     <div className='picture'>
@@ -63,16 +60,19 @@ export default function About() {
                             <img src={about} alt='imagem' />
                         </div>
                         <div>
-                            <img src={about} alt='imagem' />
+                            <img src={equipe1} alt='imagem' />
                         </div>
                         <div>
-                            <img src={about} alt='imagem' />
+                            <img src={equipe2} alt='imagem' />
                         </div>
                         <div>
-                            <img src={about} alt='imagem' />
+                            <img src={equipe3} alt='imagem' />
                         </div>
                         <div>
-                            <img src={about} alt='imagem' />
+                            <img src={equipe4} alt='imagem' />
+                        </div>
+                        <div>
+                            <img src={equipe5} alt='imagem' />
                         </div>
                     </Carousel>
                         

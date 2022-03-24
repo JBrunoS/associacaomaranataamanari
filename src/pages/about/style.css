@@ -27,7 +27,7 @@
 }
 .picture {
     width: 100%;
-    height: 600px;
+    height: 400px;
     overflow: hidden;
     position: relative;
     margin-top: 30px;
@@ -39,6 +39,11 @@
     }
     
     .content-card-about p {
+        font: 300 18px Roboto, sans-serif;
+        
+    }
+
+    .content-card-about li {
         font: 300 18px Roboto, sans-serif;
         
     }

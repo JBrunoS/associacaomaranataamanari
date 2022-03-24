@@ -29,7 +29,7 @@ export default function Footer() {
                     <FaYoutube size={60} color='#000000' />
                 </a>
                 <a
-                    href='https://api.whatsapp.com/send?phone=5585987306182&text=Olá, tenho uma pergunta sobre a Associação'
+                    href='https://api.whatsapp.com/send?phone=5585988859466&text=Olá, tenho uma pergunta sobre a Associação'
                     target='_blank'
                     rel="noreferrer"
                 >

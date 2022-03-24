@@ -29,7 +29,7 @@ import parceiro4 from '../../assets/menorpreco.jpeg'
 import parceiro5 from '../../assets/cras.gif'
 import parceiro6 from '../../assets/umplay.jpeg'
 import parceiro7 from '../../assets/ubs.jpeg'
-import parceiro8 from '../../assets/compassion.jpeg'
+// import parceiro8 from '../../assets/compassion.jpeg'
 import parceiro9 from '../../assets/kdm.jpeg'
 
 import { Link, useNavigate } from 'react-router-dom'
@@ -144,11 +144,13 @@ export default function Home() {
                         <span>Quem Somos</span>
 
                         <p>
-                            A Associaçõa Maranata de Desenvolvimento Social do Amanari fundada em 25 de Março de 2016
+                            A Associação Maranata de Desenvolvimento Social do Amanari fundada em 25 de Março de 2016
                             na cidade de Maranguape, cujo registro do seu Estatuto encontra-se no cartório Paula Costa,
-                            é uma instiutição Civil, autônoma, com fins não econômicos e, com personalidade jurídica de direito privado de duração indeterminada, com sede e foro
-                            neste município, capital Fortaleza. Associação Maranata desenvolve diversas ativiades nas áres assistenciais, saúde, educacional e sócio-cultural, através de ações próprias, por meio de assessorias técnicas e por intermédio de gestões políticas administrativas
-                            junto a instituições governamentais e não governamentais.
+                            é uma instiutição Civil, autônoma, com fins não econômicos e, com personalidade jurídica de 
+                            direito privado de duração indeterminada, com sede e foro
+                            neste município, capital Fortaleza. Associação Maranata desenvolve diversas atividades nas áres assistenciais, 
+                            saúde e sócio-cultural, através de ações próprias, por meio de assessorias técnicas e por intermédio de gestões 
+                            políticas administrativas junto a instituições governamentais e não governamentais.
                         </p>
                         <button onClick={goToHistory} >Saber Mais</button>
                     </div>
@@ -260,7 +262,7 @@ export default function Home() {
                         >
                             <div>
                                 <img src={parceiro1} alt='parceiros' />
-                                <img src={parceiro8} alt='parceiros' />
+                                {/* <img src={parceiro8} alt='parceiros' /> */}
                                 <img src={parceiro2} alt='parceiros' />
                             </div>
                             <div>

@@ -1,6 +1,6 @@
 .body .projects {
     width: 100%;
-    height: 550px;
+    height: 400px;
     /* background-image: url('../../assets/kids.jpg');
     background-repeat: no-repeat;
     background-size: cover;
@@ -399,6 +399,7 @@
 }
 
 .body .contact .info .map {
+    width: auto;
     display: flex;
     border: 1px solid #c4c4c4;
     overflow: hidden;

@@ -24,10 +24,13 @@ export default function About() {
                         <p>
                             A Associação Maranata de Desenvolvimento Social do Amanari fundada em 25 de Março de 2016
                             na cidade de Maranguape, cujo registro do seu Estatuto encontra-se no cartório Paula Costa,
-                            é uma instiutição Civil, autônoma, com fins não econômicos e, com personalidade jurídica de direito privado de duração indeterminada, com sede e foro
-                            neste município, capital Fortaleza. Associação Maranata desenvolve diversas atividades nas áres assistenciais, saúde, educacional e sócio-cultural, através de ações próprias, por meio de assessorias técnicas e por intermédio de gestões políticas administrativas
-                            junto a instituições governamentais e não governamentais. Hoje, seu principal serviço consiste na convivência e
-                            fortalecimento de vínculos para crianças e adolescentes:
+                            é uma instiutição Civil, autônoma, com fins não econômicos e, com personalidade jurídica de direito privado 
+                            de duração indeterminada, com sede e foro
+                            neste município, capital Fortaleza. Associação Maranata desenvolve diversas atividades nas áres assistenciais, 
+                            saúde e sócio-cultural, através de ações próprias, por meio de assessorias técnicas e por intermédio de gestões 
+                            políticas administrativas
+                            junto a instituições governamentais e não governamentais. 
+                            Hoje, seu principal serviço consiste na convivência e fortalecimento de vínculos para crianças e adolescentes:
                         </p>
                         <ul>
                             <li>Área Cognitiva: Desenvolve e exercita suas habilidades mentais</li>

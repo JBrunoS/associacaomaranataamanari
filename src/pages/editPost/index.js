@@ -104,13 +104,19 @@ export default function EditPost() {
                 </div>
                 <div>
                     <label>Área desenvolvida</label>
-                    <input
+                    <select
                         required
                         type='text'
                         placeholder='Área desenvolvida'
                         value={area}
                         onChange={e => setArea(e.target.value)}
-                    />
+                    >
+                        <option value=''></option>
+                        <option value='Sáude e Bem estar'>Saúde e Bem estar</option>
+                        <option value='Cognitiva'>Cognitiva</option>
+                        <option value='Socioemocional'>Socioemocional</option>
+                        <option value='Cidadania'>Cidadania</option>
+                    </select>
                 </div>
                 <div>
                     <label>Data da Atividade</label>
@@ -123,12 +129,16 @@ export default function EditPost() {
                 </div>
                 <div>
                     <label>Projeto + BR</label>
-                    <input
+                    <select
                         required
                         placeholder='projeto + BR'
                         value={projeto}
                         onChange={e => setProjeto(e.target.value)}
-                    />
+                    >
+                        <option value=''></option>
+                        <option value='547'>PEV - Itapebussu</option>
+                        <option value='637'>PEV - Amanari</option>
+                    </select>
                 </div>
                 <div>
                     <label>Local da Atividade</label>

@@ -101,7 +101,7 @@ export default function Admin() {
                             </div>
                             <div className='card-title'>
                                 <p>{incidents.atividade}</p>
-                                <p>{incidents.projeto}</p>
+                                <p>Projeto Ensinando a Viver - {incidents.projeto}</p>
                                 <p>{incidents.data}</p>
                             </div>
                             <div className='card-buttons'>

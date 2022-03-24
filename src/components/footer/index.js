@@ -12,21 +12,21 @@ export default function Footer() {
                     target='_blank'
                     rel="noreferrer"
                 >
-                    <FaInstagram size={60} color='#000' />
+                    <FaInstagram size={60} color='#000000' />
                 </a>
                 <a
                     href='https://www.facebook.com/profile.php?id=100011723442552'
                     target='_blank'
                     rel="noreferrer"
                 >
-                    <FaFacebook size={60} color='#000' />
+                    <FaFacebook size={60} color='#000000' />
                 </a>
                 <a
                     href='https://www.youtube.com/channel/UCmHphXPxiwLZjYW7me1Og-w'
                     target='_blank'
                     rel="noreferrer"
                 >
-                    <FaYoutube size={60} color='#000' />
+                    <FaYoutube size={60} color='#000000' />
                 </a>
                 <a
                     href='https://api.whatsapp.com/send?phone=5585987306182&text=Olá, tenho uma pergunta sobre a Associação'
@@ -49,14 +49,14 @@ export default function Footer() {
                     target='_blank'
                     rel="noreferrer"
                 >
-                    <FaFacebook size={30} color='#1877f2' />
+                    <FaFacebook size={30} color='#000' />
                 </a>
                 <a
                     href='https://www.youtube.com/channel/UCmHphXPxiwLZjYW7me1Og-w'
                     target='_blank'
                     rel="noreferrer"
                 >
-                    <FaYoutube size={30} color='#ff0000' />
+                    <FaYoutube size={30} color='#000' />
                 </a>
                 <a
                     href='https://api.whatsapp.com/send?phone=5585988859466&text=Olá'

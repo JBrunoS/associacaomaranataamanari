@@ -10,7 +10,7 @@
 .container-footer .social-media {
     width: 100%;
     height: 100px;
-    background-color: #FFFF;
+    background-color: #FFFFFF;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -18,7 +18,7 @@
 .container-footer .social-media-mobile {
     width: 100%;
     height: 0px;
-    background-color: #FFFF;
+    background-color: #FFFFFF;
     display: flex;
     align-items: center;
     justify-content: center;

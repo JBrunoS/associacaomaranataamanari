@@ -156,4 +156,39 @@ body {
         margin:0px ;
         -webkit-text-size-adjust: 20%;
     }
+
+    .modal-header {
+
+        /* top: 60%;
+        left: 50%;
+        right: auto;
+        bottom: auto;
+        margin-right: -50%;
+        transform: translate(-50%, -50%); */
+        z-index: 2;
+        margin: 50% 75% 0;
+        width: 55%;
+        height: 290px;
+        margin-right: 0px;
+        transform: translate(-50%, -50%);
+        background-color: #FF8743;
+        padding: 40px 10px 20px;
+        
+    }
+
+    .modal-header .header-links {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .modal-header .header-links a {
+        text-decoration: none;
+        color: #fff;
+        font: 500 18px Roboto, sans-serif;
+        border-bottom: .2px ridge #bfbfc1;
+        margin-bottom: 10px;
+        padding-bottom: 10px;
+    
+    }
+
 }

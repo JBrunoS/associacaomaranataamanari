@@ -94,6 +94,16 @@
     font-size: 18px;
 }
 
+.carousel .control-arrow .partners-carousel {
+    outline: 0;
+    border: 0;
+    background: none;
+    bottom: 50%;
+    margin-top: -13px;
+    font-size: 18px;
+}
+
+
 .carousel .thumbs-wrapper {
     margin: 20px;
     overflow: hidden;
@@ -155,6 +165,10 @@
     bottom: 0;
     margin-top: 0;
     padding: 5px;
+}
+.partners .carousel.carousel-slider .control-arrow {
+    
+    visibility: hidden;
 }
 
 .carousel.carousel-slider .control-arrow:hover {
@@ -271,6 +285,10 @@
     text-align: center;
     width: 100%;
     z-index: 1;
+}
+.partners .carousel .control-dots {
+    
+    visibility: hidden;
 }
 
 @media (min-width: 960px) {

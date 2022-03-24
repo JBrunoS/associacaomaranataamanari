@@ -26,18 +26,19 @@ export default function About() {
                             na cidade de Maranguape, cujo registro do seu Estatuto encontra-se no cartório Paula Costa,
                             é uma instiutição Civil, autônoma, com fins não econômicos e, com personalidade jurídica de direito privado de duração indeterminada, com sede e foro
                             neste município, capital Fortaleza. Associação Maranata desenvolve diversas atividades nas áres assistenciais, saúde, educacional e sócio-cultural, através de ações próprias, por meio de assessorias técnicas e por intermédio de gestões políticas administrativas
-                            junto a instituições governamentais e não governamentais. Hoje, seu principal serviço consiste na convivência e 
-                            fortalecimento de vínculos para crianças e adolescentes: 
-                                <ul>
-                                    <li>Área Cognitiva: Desenvolve e exercita suas habilidades mentais</li>
-                                    <li>Área Física: A instituição oferece alimentação balanceada, atendimento médico, exercícios físicos e 
-                                        Atividades em que são estimuladas a autonomia e a prática de bons hábitos de saúde.
-                                    </li>
-                                    <li>Área Socioemocional: Atendimento individual e com amor, a instituição oferece um ambiente e atividades para que crianças e adolescentes aprendam a expressar seus sentimentos de maneira apropriada, 
-                                        desenvolvendo o domínio próprio e a habilidade de interagir com os outros de modo saudável e compassivo, conhecendo a si mesmo e aos outros.
-                                    </li>
-                                </ul>
+                            junto a instituições governamentais e não governamentais. Hoje, seu principal serviço consiste na convivência e
+                            fortalecimento de vínculos para crianças e adolescentes:
                         </p>
+                        <ul>
+                            <li>Área Cognitiva: Desenvolve e exercita suas habilidades mentais</li>
+                            <li>Área Física: A instituição oferece alimentação balanceada, atendimento médico, exercícios físicos e
+                                Atividades em que são estimuladas a autonomia e a prática de bons hábitos de saúde.
+                            </li>
+                            <li>Área Socioemocional: Atendimento individual e com amor, a instituição oferece um ambiente e atividades para que crianças e adolescentes aprendam a expressar seus sentimentos de maneira apropriada,
+                                desenvolvendo o domínio próprio e a habilidade de interagir com os outros de modo saudável e compassivo, conhecendo a si mesmo e aos outros.
+                            </li>
+                        </ul>
+
                     </div>
                     <div className='content-card-about'>
                         <span>Missão</span>
@@ -49,37 +50,37 @@ export default function About() {
                     </div>
 
                     <div className='picture'>
-                    <Carousel
-                        autoPlay
-                        showThumbs={false}
-                        infiniteLoop
-                        stopOnHover={false}
-                        interval={4500}
-                    >
-                        <div>
-                            <img src={about} alt='imagem' />
-                        </div>
-                        <div>
-                            <img src={equipe1} alt='imagem' />
-                        </div>
-                        <div>
-                            <img src={equipe2} alt='imagem' />
-                        </div>
-                        <div>
-                            <img src={equipe3} alt='imagem' />
-                        </div>
-                        <div>
-                            <img src={equipe4} alt='imagem' />
-                        </div>
-                        <div>
-                            <img src={equipe5} alt='imagem' />
-                        </div>
-                    </Carousel>
-                        
+                        <Carousel
+                            autoPlay
+                            showThumbs={false}
+                            infiniteLoop
+                            stopOnHover={false}
+                            interval={4500}
+                        >
+                            <div>
+                                <img src={about} alt='imagem' />
+                            </div>
+                            <div>
+                                <img src={equipe1} alt='imagem' />
+                            </div>
+                            <div>
+                                <img src={equipe2} alt='imagem' />
+                            </div>
+                            <div>
+                                <img src={equipe3} alt='imagem' />
+                            </div>
+                            <div>
+                                <img src={equipe4} alt='imagem' />
+                            </div>
+                            <div>
+                                <img src={equipe5} alt='imagem' />
+                            </div>
+                        </Carousel>
+
                     </div>
 
                 </div>
-                
+
             </div>
 
             <Footer />

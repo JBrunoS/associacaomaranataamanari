@@ -49,6 +49,7 @@ export default function Register() {
             local
         }
 
+        // console.log(values)
 
         try {
 
@@ -92,11 +93,11 @@ export default function Register() {
             setImagens([])
 
             try {
-                await api.post(`publicacao/${id}`)    
+                await api.post(`publicacao/${id}`)
             } catch (error) {
                 alert(error)
             }
-            
+
             navigate('/admin');
 
         } catch (error) {
@@ -143,13 +144,20 @@ export default function Register() {
                 </div>
                 <div>
                     <label>Área desenvolvida</label>
-                    <input
+                    
+                    <select
                         required
                         type='text'
                         placeholder='Área desenvolvida'
                         value={area}
                         onChange={e => setArea(e.target.value)}
-                    />
+                    >
+                        <option value=''></option>
+                        <option value='Sáude e Bem estar'>Saúde e Bem estar</option>
+                        <option value='Cognitiva'>Cognitiva</option>
+                        <option value='Socioemocional'>Socioemocional</option>
+                        <option value='Cidadania'>Cidadania</option>
+                    </select>
                 </div>
                 <div>
                     <label>Data da Atividade</label>
@@ -161,13 +169,18 @@ export default function Register() {
                     />
                 </div>
                 <div>
-                    <label>Projeto + BR</label>
-                    <input
+                    <label>Projeto</label>
+
+                    <select
                         required
                         placeholder='projeto + BR'
                         value={projeto}
                         onChange={e => setProjeto(e.target.value)}
-                    />
+                    >
+                        <option value=''></option>
+                        <option value='547'>PEV - Itapebussu</option>
+                        <option value='637'>PEV - Amanari</option>
+                    </select>
                 </div>
                 <div>
                     <label>Local da Atividade</label>

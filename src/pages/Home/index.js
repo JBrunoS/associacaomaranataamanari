@@ -30,6 +30,7 @@ import parceiro5 from '../../assets/cras.gif'
 import parceiro6 from '../../assets/umplay.jpeg'
 import parceiro7 from '../../assets/ubs.jpeg'
 import parceiro8 from '../../assets/compassion.jpeg'
+import parceiro9 from '../../assets/kdm.jpeg'
 
 import { Link, useNavigate } from 'react-router-dom'
 import Header from '../../components/header';
@@ -84,8 +85,7 @@ export default function Home() {
         }
 
         positions.push(...incidents)
-        
-        console.log(positions) 
+
     }
 
     useEffect(() => {
@@ -164,7 +164,7 @@ export default function Home() {
 
                         {incidents.map((incidents, index) => (
                             <div className='card' onClick={() => goToDetails(incidents.id)} key={incidents.id} >
-                                
+
                                 <div className='image-card'>
                                     <img src={capa} alt='kids' />
                                 </div>
@@ -248,15 +248,32 @@ export default function Home() {
 
                 <div className='partners'>
                     <span>Parceiros</span>
+
                     <div>
-                        <img src={parceiro1} alt='parceiros' />
-                        <img src={parceiro8} alt='parceiros' />
-                        <img src={parceiro2} alt='parceiros' />
-                        <img src={parceiro3} alt='parceiros' />
-                        <img src={parceiro4} alt='parceiros' />
-                        <img src={parceiro5} alt='parceiros' />
-                        <img src={parceiro6} alt='parceiros' />
-                        <img src={parceiro7} alt='parceiros' />
+                        <Carousel
+                            autoPlay
+                            showThumbs={false}
+                            infiniteLoop
+                            stopOnHover={false}
+                            interval={4500}
+                            className='partners-carousel'
+                        >
+                            <div>
+                                <img src={parceiro1} alt='parceiros' />
+                                <img src={parceiro8} alt='parceiros' />
+                                <img src={parceiro2} alt='parceiros' />
+                            </div>
+                            <div>
+                                <img src={parceiro3} alt='parceiros' />
+                                <img src={parceiro4} alt='parceiros' />
+                                <img src={parceiro5} alt='parceiros' />
+                            </div>
+                            <div>
+                                <img src={parceiro6} alt='parceiros' />
+                                <img src={parceiro7} alt='parceiros' />
+                                <img src={parceiro9} alt='parceiros' />
+                            </div>
+                        </Carousel>
                     </div>
 
                 </div>

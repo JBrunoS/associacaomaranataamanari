@@ -10,11 +10,6 @@ import './carousel.css'
 import './style.css'
 import api from '../../services/api'
 
-
-import team from '../../assets/team.jpg'
-
-
-import capa from '../../assets/capa.JPG'
 import about from '../../assets/about.JPG'
 import image1 from '../../assets/image1.JPG'
 import image2 from '../../assets/image2.JPG'
@@ -38,9 +33,8 @@ import Footer from '../../components/footer';
 
 export default function Home() {
     const [incidents, setIncidents] = useState([])
-    const [imagens, setImagens] = useState([])
     const navigate = useNavigate()
-    const positions = [];
+    
 
     const [nome, setNome] = useState('')
     const [email, setEmail] = useState('')
@@ -71,20 +65,10 @@ export default function Home() {
             await api.get('/posts')
                 .then(response => {
                     setIncidents(response.data);
-
-                    for (let index = 0; index < response.data.length; index++) {
-                        api.get(`/image/${response.data[index].id}`)
-                            .then(response => {
-                                positions.push(...response.data)
-                            })
-                    }
-                    setImagens(positions);
                 })
         } catch (error) {
             alert(error)
         }
-
-        positions.push(...incidents)
 
     }
 
@@ -101,7 +85,8 @@ export default function Home() {
     }
 
     function goToDetails(id) {
-        localStorage.setItem("post_id", id);
+        
+        localStorage.setItem("post_id", parseInt(id));
         navigate('/details')
     }
 
@@ -146,7 +131,7 @@ export default function Home() {
                         <p>
                             A Associação Maranata de Desenvolvimento Social do Amanari fundada em 25 de Março de 2016
                             na cidade de Maranguape, cujo registro do seu Estatuto encontra-se no cartório Paula Costa,
-                            é uma instiutição Civil, autônoma, com fins não econômicos e, com personalidade jurídica de 
+                            é uma instituição Civil, autônoma, com fins não econômicos e, com personalidade jurídica de 
                             direito privado de duração indeterminada, com sede e foro
                             neste município, capital Fortaleza. Associação Maranata desenvolve diversas atividades nas áres assistenciais, 
                             saúde e sócio-cultural, através de ações próprias, por meio de assessorias técnicas e por intermédio de gestões 
@@ -165,10 +150,10 @@ export default function Home() {
                     <div className='cards'>
 
                         {incidents.map((incidents, index) => (
-                            <div className='card' onClick={() => goToDetails(incidents.id)} key={incidents.id} >
+                            <div className='card' onClick={() => goToDetails(incidents.user_id)} key={incidents.user_id} >
 
                                 <div className='image-card'>
-                                    <img src={capa} alt='kids' />
+                                    <img src={incidents.url} alt={incidents.nome} />
                                 </div>
 
                                 <div className='description-card'>

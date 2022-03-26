@@ -181,17 +181,14 @@
     width: 100%;
     height: 60px;
     background-color: #FFF;
-    border-bottom-left-radius: 6px;
-    border-bottom-right-radius: 6px;
+    
     padding-left: 10px;
     font-weight: 500;
 }
 
 .body .activities .card img {
     width: 100%;
-    height: 100%;
-    border-top-left-radius: 6px;
-    border-top-right-radius: 6px;
+    
 }
 
 .body .activities button{

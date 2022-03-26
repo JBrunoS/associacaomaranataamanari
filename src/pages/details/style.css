@@ -106,6 +106,20 @@
     .description {
         width: 100%;
     }
+
+    .description p {
+        font: 400 20px Roboto, sans-serif;
+        margin: 10px 20px 20px;
+        text-align: justify;
+        text-indent: 30px;
+    }    
+
+    .description h2 {
+        align-self: flex-start;
+        font: 700 22px Roboto, sans-serif;
+        margin: 5px 20px 5px;
+        text-align: justify;
+    }
     
     .grid {
         width: 90%;

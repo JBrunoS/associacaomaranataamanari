@@ -18,12 +18,17 @@ export default function Register() {
     const [files, setFiles] = useState([])
     const previewImg = []
     const previewFile = []
+    const [id, setID] = useState('')
 
     const navigate = useNavigate();
 
     useEffect(() => {
         loadPreview();
     }, [imagens])
+
+    useEffect(() => {
+        handlePostagem();
+    }, [id])
 
     function loadPreview() {
         if (imagens.length > 0) {
@@ -38,7 +43,6 @@ export default function Register() {
         e.preventDefault();
 
         const dataImage = new FormData();
-        let id = '';
 
         const values = {
             atividade,
@@ -63,13 +67,13 @@ export default function Register() {
             if (files.length > 0 && files.length <= 15) {
                 await api.post('/post', values)
                     .then(response => {
+                        setID(response.data[0].id);
+
                         for (let i = 0; i < files.length; i++) {
                             dataImage.append('file', files[i])
                             api.post(`/post/${response.data[0].id}`, dataImage)
                             dataImage.delete('file', files[i])
                         }
-                        id = response.data[0].id;
-
                         alert('Postagem Adicionada com sucesso!')
                     })
             } else {
@@ -92,19 +96,28 @@ export default function Register() {
             setLocal('')
             setImagens([])
 
-            try {
-                await api.post(`publicacao/${id}`)
-            } catch (error) {
-                alert(error)
-            }
-
             navigate('/admin');
 
         } catch (error) {
-            alert(error)
+            console.log(error)
         }
 
+    }
 
+    async function handlePostagem(){
+        if (id !== '') {
+            
+            try {
+                await api.post(`publicacao/${id}`)
+                // .then(response => {
+                //     console.log(response)
+                // })
+            } catch (error) {
+                console.log(error)
+            }
+        }
+
+        setID('');
     }
 
     function deleteImagem(name) {

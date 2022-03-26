@@ -118,12 +118,12 @@ export default function Details() {
                 <div className="content">
 
                     <div key={incidents.user_id} className='head-description'>
-                        <span>{incidents.atividade} - {incidents.data}</span>
+                        <span>{incidents.atividade} - {incidents.data ? (incidents.data.slice(8) + '/' + incidents.data.slice(5, 7) + '/' + incidents.data.slice(0, 4)) : (incidents.data)}</span>
                         <div className='description'>
                             <p>{incidents.descricao}</p>
-                            <h3>{incidents.local}</h3>
-                            <h3>{incidents.projeto}</h3>
-                            <h3>Área: {incidents.area}</h3>
+                            <h2>Local: {incidents.local}</h2>
+                            <h2>Projeto Ensinando a Viver: {incidents.projeto} - {incidents.projeto === '547' ? 'Itapebussu' : 'Amanari'}</h2>
+                            <h2>Área: {incidents.area}</h2>
                         </div>
                     </div>
 

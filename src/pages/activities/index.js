@@ -3,28 +3,21 @@ import { useNavigate } from 'react-router-dom'
 
 import './style.css'
 
-import capa from '../../assets/capa.JPG'
 import Header from '../../components/header'
 import api from '../../services/api'
 import Footer from '../../components/footer'
 
 export default function About() {
     const [incidents, setIncidents] = useState([])
-    const [imagens, setImagens] = useState([])
 
     const navigate = useNavigate()
 
     async function handleIncidents() {
         try {
-            await api.get('/all/posts')
+            await api.get('/publicacoes')
                 .then(response => {
                     setIncidents(response.data)
-                    for (let index = 0; index < response.data.length; index++) {
-                        api.get(`/image/${response.data[index].id}`)
-                            .then(response => {
-                                setImagens(response.data)
-                            })
-                    }
+                    
                 })
         } catch (error) {
             alert(error)
@@ -32,7 +25,7 @@ export default function About() {
     }
 
     function goToDetails(id) {
-        localStorage.setItem("post_id", id);
+        localStorage.setItem("post_id", parseInt(id));
         navigate('/details')
     }
 
@@ -49,10 +42,10 @@ export default function About() {
 
                     <div className='cards'>
                         {incidents.map((incidents, index) => (
-                            <div className='card' key={incidents.id} onClick={() => goToDetails(incidents.id)} >
+                            <div className='card' key={incidents.user_id} onClick={() => goToDetails(incidents.user_id)} >
 
                                 <div>
-                                    <img src={capa} alt='imagem' />
+                                    <img src={incidents.url} alt={incidents.nome} />
 
                                 </div>
                                 <div>

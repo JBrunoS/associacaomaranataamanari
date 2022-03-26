@@ -5,11 +5,8 @@ import { useNavigate } from "react-router-dom";
 import './style.css'
 import api from "../../services/api";
 
-import capa from '../../assets/capa.JPG'
-
 export default function Admin() {
     const [incidents, setIncidents] = useState([])
-    const [imagens, setImagens] = useState([])
     const [mensagens, setMensagens] = useState([])
     
     const navigate = useNavigate()
@@ -23,17 +20,9 @@ export default function Admin() {
 
     async function handleIncidents() {
         try {
-            await api.get('/all/posts')
+            await api.get('publicacoes')
                 .then(response => {
                     setIncidents(response.data)
-                    
-                    for (let index = 0; index < response.data.length; index++) {
-                        api.get(`/image/${response.data[index].id}`)
-                            .then(response => {
-                                setImagens(response.data)
-                                
-                            })
-                    }
                 })
         
         } catch (error) {
@@ -64,16 +53,16 @@ export default function Admin() {
     }
 
     function handleEdit(id) {
-        localStorage.setItem('user_id', id)
+        localStorage.setItem('user_id', parseInt(id))
         navigate('/edit')
     }
 
     async function handleDelete(id) {
 
         try {
-            await api.delete(`/delete/post/${id}`)
+            await api.delete(`/delete/post/${parseInt(id)}`)
                 .then(response => {
-                    setIncidents(incidents.filter(incident => incident.id !== id))
+                    setIncidents(incidents.filter(incident => incident.user_id !== id))
                 })
         } catch (error) {
             console.log(error)
@@ -93,10 +82,10 @@ export default function Admin() {
                 </div>
                 <div className='content-admin'>
                     {incidents.map((incidents, index) => (
-                        <div className='card-admin' key={incidents.id}>
+                        <div className='card-admin' key={incidents.user_id}>
                             <div className='card-img'>
 
-                                <img src={capa} alt='imagem' />
+                                <img src={incidents.url} alt={incidents.nome} />
 
                             </div>
                             <div className='card-title'>
@@ -105,8 +94,8 @@ export default function Admin() {
                                 <p>{incidents.data}</p>
                             </div>
                             <div className='card-buttons'>
-                                <div><FaEdit size={20} color='#f97e14' onClick={() => handleEdit(incidents.id)} /></div>
-                                <div><FaTrashAlt size={20} color='#f91414' onClick={() => handleDelete(incidents.id)} /></div>
+                                <div><FaEdit size={20} color='#f97e14' onClick={() => handleEdit(incidents.user_id)} /></div>
+                                <div><FaTrashAlt size={20} color='#f91414' onClick={() => handleDelete(incidents.user_id)} /></div>
                             </div>
                         </div>
                     ))}

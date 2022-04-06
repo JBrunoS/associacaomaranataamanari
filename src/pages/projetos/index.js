@@ -152,24 +152,24 @@ export default function Projetos() {
                     <div className="project">
                         <div>
                             <h1>Projeto Ensinando a Viver - Itapebussu</h1>
-                            <p>Endereço: Rua ADSDADSDD, 900 - Telefone 98464646644 </p>
-                            <p>Crianças atendidas: 900</p>
-                            <p>Faixa etária: 3 - 18 anos</p>
+                            <p>Endereço: Rua Euvaldo Marques, 306 - Telefone (85) 988859466/ (85) 982071746  </p>
+                            <p>Crianças atendidas: 435</p>
+                            <p>Faixa etária: 1 - 22 anos</p>
                             <h2>Atividades Realizadas</h2>
                             <ul>
-                                <li>Atividade 1: uma breve descriçãoda atividade realizada  no pev</li>
-                                <li>Atividade 1: uma breve descriçãoda atividade realizada  no pev</li>
-                                <li>Atividade 1: uma breve descriçãoda atividade realizada  no pev</li>
-                                <li>Atividade 1: uma breve descriçãoda atividade realizada  no pev</li>
-                                <li>Atividade 1: uma breve descriçãoda atividade realizada  no pev</li>
-                                <li>Atividade 1: uma breve descriçãoda atividade realizada  no pev</li>
+                                <li>Área Física: Avaliação de saúde, Futebol, jogos recreativos, vôlei;</li>
+                                <li>Área cognitiva: reforço escolar, musicalização, </li>
+                                <li></li>
+                                <li>Área Socioemocional: Passeios de convivência e gincanas</li>
+                                <li>Atividades de serviço: Passeatas de concientização</li>
+                                <li>Oficinas: violão, computação, artes manuais;</li>
                             </ul>
 
                             <h2>Dias de Atendimento</h2>
                             <p>Terça-feira a Sábado - manhã e tarde</p>
 
                             <h2>Histórico breve</h2>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus mattis finibus dui, ac congue mauris tempor eget. Vivamus rhoncus erat eu vestibulum maximus. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Praesent non commodo est. Nulla facilisi. Etiam ornare tortor sit amet est ultrices, sed elementum arcu accumsan. Vestibulum vel felis eu nisi semper laoreet sed non urna. Integer nec pharetra dui, quis mollis enim. Mauris id molestie neque. Sed vitae enim felis. Nam ut bibendum risus. Praesent dignissim interdum tortor eu pellentesque. Proin vel dui vel quam vulputate porta sed ac erat. Nam diam libero, sollicitudin at imperdiet sed, blandit non sem. Donec volutpat, est et ornare consequat, orci elit sollicitudin quam, vel iaculis nibh arcu id massa. Nullam et nibh vitae erat auctor dignissim non at enim.</p>
+                            <p></p>
                         </div>
                         <div className="imagens-projeto">
                             {
@@ -183,10 +183,10 @@ export default function Projetos() {
 
                     <div className="project">
                         <div>
-                            <h1>Projeto Ensinando a Viver - Itapebussu</h1>
-                            <p>Endereço: Rua ADSDADSDD, 900 - Telefone 98464646644 </p>
-                            <p>Crianças atendidas: 900</p>
-                            <p>Faixa etária: 3 - 18 anos</p>
+                            <h1>Projeto Ensinando a Viver - Amanari</h1>
+                            <p>Endereço: Rua Acre, S/N - Telefone (85) 98885-9466/ (85) 98207-1746 </p>
+                            <p>Crianças atendidas: 435</p>
+                            <p>Faixa etária: 1 - 22 anos</p>
                             <h2>Atividades Realizadas</h2>
                             <ul>
                                 <li>Atividade 1: uma breve descriçãoda atividade realizada  no pev</li>
@@ -198,7 +198,7 @@ export default function Projetos() {
                             </ul>
 
                             <h2>Dias de Atendimento</h2>
-                            <p>Terça-feira a Sábado - manhã e tarde</p>
+                            <p>Terça-feira a Sexta-feira - manhã e tarde</p>
 
                             <h2>Histórico breve</h2>
                             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus mattis finibus dui, ac congue mauris tempor eget. Vivamus rhoncus erat eu vestibulum maximus. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Praesent non commodo est. Nulla facilisi. Etiam ornare tortor sit amet est ultrices, sed elementum arcu accumsan. Vestibulum vel felis eu nisi semper laoreet sed non urna. Integer nec pharetra dui, quis mollis enim. Mauris id molestie neque. Sed vitae enim felis. Nam ut bibendum risus. Praesent dignissim interdum tortor eu pellentesque. Proin vel dui vel quam vulputate porta sed ac erat. Nam diam libero, sollicitudin at imperdiet sed, blandit non sem. Donec volutpat, est et ornare consequat, orci elit sollicitudin quam, vel iaculis nibh arcu id massa. Nullam et nibh vitae erat auctor dignissim non at enim.</p>

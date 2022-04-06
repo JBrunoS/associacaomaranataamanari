@@ -24,7 +24,7 @@ import parceiro4 from '../../assets/menorpreco.jpeg'
 import parceiro5 from '../../assets/cras.gif'
 import parceiro6 from '../../assets/umplay.jpeg'
 import parceiro7 from '../../assets/ubs.jpeg'
-// import parceiro8 from '../../assets/compassion.jpeg'
+import parceiro8 from '../../assets/otica.jpeg'
 import parceiro9 from '../../assets/kdm.jpeg'
 
 import { Link, useNavigate } from 'react-router-dom'
@@ -247,7 +247,7 @@ export default function Home() {
                         >
                             <div>
                                 <img src={parceiro1} alt='parceiros' />
-                                {/* <img src={parceiro8} alt='parceiros' /> */}
+                                <img src={parceiro8} alt='parceiros' />
                                 <img src={parceiro2} alt='parceiros' />
                             </div>
                             <div>

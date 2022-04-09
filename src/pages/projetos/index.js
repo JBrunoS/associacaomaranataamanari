@@ -159,7 +159,6 @@ export default function Projetos() {
                             <ul>
                                 <li>Área Física: Avaliação de saúde, Futebol, jogos recreativos, vôlei;</li>
                                 <li>Área cognitiva: reforço escolar, musicalização, </li>
-                                <li></li>
                                 <li>Área Socioemocional: Passeios de convivência e gincanas</li>
                                 <li>Atividades de serviço: Passeatas de concientização</li>
                                 <li>Oficinas: violão, computação, artes manuais;</li>

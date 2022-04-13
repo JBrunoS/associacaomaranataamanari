@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import Modal from 'react-modal'
 import { FaTimes, FaArrowLeft, FaArrowRight } from 'react-icons/fa'
+import { useNavigate } from 'react-router-dom'
 
 import './style.css'
 
@@ -27,6 +28,7 @@ export default function Details() {
     const [modalIsOpen, setIsOpen] = useState(false)
     const [openImage, setOpenImage] = useState('')
     const [position, setPosition] = useState('')
+    const navigate = useNavigate();
 
     function openModal(incident) {
         setIsOpen(true);
@@ -39,7 +41,7 @@ export default function Details() {
     }
 
     function handleNextImage() {
-        
+
         let pos = position;
 
         pos = pos + 1;
@@ -67,11 +69,11 @@ export default function Details() {
     }
 
     function handlePrevImage() {
-        
+
         let pos = position;
 
         pos = pos - 1;
-        
+
 
         if (pos < 0) {
             pos = imagens.length - 1;
@@ -84,11 +86,21 @@ export default function Details() {
 
     async function handleIncidents() {
 
-        await api.get(`/posts/${localStorage.getItem('post_id')}`)
-            .then(response => {
-                setIncidents(response.data[0])
-                setImagens(response.data)
-            })
+        if (localStorage.getItem('post_id') === null) {
+            
+            navigate('/activities')
+            return
+
+        }
+        else {
+            await api.get(`/posts/${localStorage.getItem('post_id')}`)
+                .then(response => {
+                    setIncidents(response.data[0])
+                    setImagens(response.data)
+                })
+        }
+
+
     }
 
     useEffect(() => {

@@ -4,7 +4,7 @@ import { Carousel } from 'react-responsive-carousel'
 import './style.css'
 import './carousel.css'
 
-import about from '../../assets/about.JPG'
+import about from '../../assets/about.jpeg'
 import equipe1 from '../../assets/equipe1.JPG'
 import equipe2 from '../../assets/equipe2.JPG'
 import equipe3 from '../../assets/equipe3.JPG'

@@ -15,6 +15,7 @@ export default function Register() {
     const [projeto, setProjeto] = useState('')
     const [local, setLocal] = useState('')
     const [imagens, setImagens] = useState([])
+    const [prevImagens, setprevImagens] = useState([])
     const [files, setFiles] = useState([])
     const previewImg = []
     const previewFile = []
@@ -35,8 +36,15 @@ export default function Register() {
             for (let i = 0; i < imagens.length; i++) {
                 previewImg.push(imagens[i])
             }
+            
+            for (let i = 0; i < previewImg.length; i++) {
+                previewFile.push(previewImg[i])
+            }
         }
-        setFiles(previewImg)
+
+        console.log(previewFile)
+        setprevImagens(previewFile)
+        setFiles(prevImagens)
     }
 
     async function handleRegister(e) {
@@ -133,6 +141,7 @@ export default function Register() {
 
         setFiles(previewFile)
     }
+
     return (
         <div className='container-register'>
             <form onSubmit={handleRegister}>

@@ -10,7 +10,7 @@ import './carousel.css'
 import './style.css'
 import api from '../../services/api'
 
-import about from '../../assets/about.JPG'
+import about from '../../assets/about.jpeg'
 import image1 from '../../assets/image1.JPG'
 import image2 from '../../assets/image2.JPG'
 import image3 from '../../assets/image3.JPG'

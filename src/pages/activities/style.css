@@ -5,13 +5,13 @@
     flex-direction: column;
     align-items: center;
     margin: 20px auto 30px;
-    
+
 }
+
 .cards {
-    width: 80%;
-    
+    width: 90%;
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(3, 1fr);
     margin: 25px auto;
 }
 
@@ -22,58 +22,85 @@
     align-items: center;
     justify-content: space-between;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-    cursor: pointer;
     margin: 10px auto 10px;
-    
+    position: relative;
 }
 
 .card div:first-child {
-    
-    height: 80%;
+    width: 100%;
+    height: 200px;
     background-color: #ddd;
     overflow: hidden;
     display: flex;
     align-items: center;
     justify-content: center;
-    
+
 }
 
-.card:hover {
-    opacity: .7;
+.card div h3 {
+    text-overflow: ellipsis;
 }
+
+
 
 .card div:last-child {
     width: 100%;
-    height: 20%;
+    height: 90px;
     background-color: #FFF;
-    
-    padding-left: 10px;
+    padding: 10px;
     font-weight: 500;
+    font-size: clamp(6px, 75%, 15px);
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    justify-content: center;
+    justify-content: flex-start;
+
+    overflow-y: scroll;
+    text-overflow: ellipsis;
+
+
 }
 
 .card img {
     width: 100%;
-    
-    
+    height: 100%;
+    object-fit: cover;
+
 }
 
-@media only screen and (max-width: 768px){
+.card video {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.card:hover::after {
+
+    cursor: pointer;
+    content: 'VER MAIS';
+    background-color: #FF8743;
+    color: #FFF;
+    font-size: 22px;
+    padding: 10px 20px;
+    border-radius: 8px;
+    position: absolute;
+    top: 30%;
+}
+
+@media only screen and (max-width: 768px) {
     .body .content-activities {
         height: auto;
     }
+
     .cards {
         width: 100%;
         display: flex;
         flex-direction: column;
         align-items: center;
         justify-content: center;
-        
+
     }
-    
+
     .card {
         width: 90%;
         display: flex;
@@ -81,21 +108,21 @@
         align-items: center;
         justify-content: space-between;
     }
-    
+
     .card div:first-child {
         height: 70%;
     }
-    
+
     .card:hover {
         opacity: 1;
     }
-    
+
     .card div:last-child {
         width: 100%;
         height: 30%;
         padding: 10px;
     }
-    
+
     .card img {
         width: 100%;
         height: 100%;

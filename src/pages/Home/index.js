@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react'
+import { FaWhatsapp } from 'react-icons/fa'
 
 import { Carousel } from 'react-responsive-carousel'
 import {
@@ -6,7 +7,7 @@ import {
     Marker,
 } from 'react-static-google-map';
 
-import './carousel.css'
+import './carouselHome.css'
 import './style.css'
 import api from '../../services/api'
 
@@ -14,8 +15,14 @@ import about from '../../assets/about.jpeg'
 import image1 from '../../assets/image1.JPG'
 import image2 from '../../assets/image2.JPG'
 import image3 from '../../assets/image3.JPG'
+import image4 from '../../assets/image4.jpg'
 import image5 from '../../assets/image5.JPG'
 import image6 from '../../assets/image6.JPG'
+
+import cmas from '../../assets/cmas.png'
+import atestado from '../../assets/atestado.png'
+import utilidade from '../../assets/utilidade.png'
+import utilidadeEstadual from '../../assets/utilidade-estadual.png'
 
 import parceiro1 from '../../assets/igreja.png'
 import parceiro2 from '../../assets/dagoberto.jpeg'
@@ -26,15 +33,18 @@ import parceiro6 from '../../assets/umplay.jpeg'
 import parceiro7 from '../../assets/ubs.jpeg'
 import parceiro8 from '../../assets/otica.jpeg'
 import parceiro9 from '../../assets/kdm.jpeg'
+import parceiro10 from '../../assets/mesa brasil.png'
 
-import { Link, useNavigate } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
 import Header from '../../components/header';
 import Footer from '../../components/footer';
 
 export default function Home() {
     const [incidents, setIncidents] = useState([])
     const navigate = useNavigate()
-    
+
+    const itapebussu = 'IGQWRNMEZACcWd1YXl4ZAHk3NTgwNll5SFU5SVR2QnVaVzZAVd0xNTVBzSXNVd2dhZA1B4Q2RfbVlDVndETWkzYWQzUGc3R3lXV3lsSHBsVjJoeDBWUVlqVHNHUEZAwell6SzlYdDRWdU5rRGE2VE1INUlNLTY0TXdUbGcZD'
+    const amanari = 'IGQWRNclYxZAV9ZAb3p0YXRGc1JWUkdpV3JCRDJNeUZA5dlBxc2RIaWV1OFg1ckhmN3pOSW94a1FsOGRCLUFJaVVzVlY1WVZAYUXRCOGhJMk0wU3Q2LTZAvdTlNU2JRRzBoNGpTdGhRazV1LXlqVjZAEei1jYkZABcTNrejQZD'
 
     const [nome, setNome] = useState('')
     const [email, setEmail] = useState('')
@@ -42,36 +52,36 @@ export default function Home() {
 
     async function handleSendMessage(e) {
         e.preventDefault();
-
-        const data = { nome, email, mensagem }
-
-        try {
-            await api.post('/messages', data)
-
-            setNome('')
-            setEmail('')
-            setMensagem('')
-
-            alert("Mensagem Enviada!")
-        } catch (error) {
-            console.log(error)
-        }
+        const win = window.open(`https://api.whatsapp.com/send?phone=5585988859466&text=Olá, me chamo ${nome}, esse é meu email ${email} e essa é minha mensagem: ${mensagem}. Aguardo retorno.`, '_blank')
+        win.focus()
 
     }
 
     async function handleIncidents() {
+        
+        const array1 = []
+        const array2 = []
+        await api.get(`https://graph.instagram.com/me/media?fields=id,caption,media_type,media_url,username,timestamp&access_token=${itapebussu}`)
+            .then(response => {
+                for (let i = 0; i < 3; i++) {
+                    array1.push(response.data.data[i])
+                }
+                
+            })
+        await api.get(`https://graph.instagram.com/me/media?fields=id,caption,media_type,media_url,username,timestamp&access_token=${amanari}`)
+            .then(response => {
+                for (let i = 0; i < 3; i++) {
+                    array2.push(response.data.data[i])
+                }
+            })
 
-        try {
-            await api.get('/posts')
-                .then(response => {
-                    setIncidents(response.data);
-                })
-        } catch (error) {
-            alert(error)
-        }
-
+            const array = array1.concat(array2)
+            
+            
+            setIncidents(array)
+            
     }
-
+ 
     useEffect(() => {
         handleIncidents();
     }, [])
@@ -84,9 +94,11 @@ export default function Home() {
         navigate('/activities')
     }
 
-    function goToDetails(id) {
-        
-        localStorage.setItem("post_id", parseInt(id));
+    function goToDetails(id, caption, type, username) {
+        localStorage.setItem("post_id", id);
+        localStorage.setItem("caption_post", caption);
+        localStorage.setItem("media_type", type);
+        localStorage.setItem("username", username);
         navigate('/details')
     }
 
@@ -113,15 +125,16 @@ export default function Home() {
                             <img src={image3} alt='imagem' />
                         </div>
                         <div>
+                            <img src={image4} alt='imagem' />
+                        </div>
+                        <div>
                             <img src={image5} alt='imagem' />
                         </div>
                         <div>
                             <img src={image6} alt='imagem' />
                         </div>
                     </Carousel>
-                    <div className='button'>
-                        <Link to='/projects'><p>Ver Projetos</p></Link>
-                    </div>
+                    
                 </div>
 
                 <div className='about'>
@@ -131,10 +144,10 @@ export default function Home() {
                         <p>
                             A Associação Maranata de Desenvolvimento Social do Amanari fundada em 25 de Março de 2016
                             na cidade de Maranguape, cujo registro do seu Estatuto encontra-se no cartório Paula Costa,
-                            é uma instituição Civil, autônoma, com fins não econômicos e, com personalidade jurídica de 
+                            é uma instituição Civil, autônoma, com fins não econômicos e, com personalidade jurídica de
                             direito privado de duração indeterminada, com sede e foro
-                            neste município, capital Fortaleza. Associação Maranata desenvolve diversas atividades nas áres assistenciais, 
-                            saúde e sócio-cultural, através de ações próprias, por meio de assessorias técnicas e por intermédio de gestões 
+                            neste município, capital Fortaleza. Associação Maranata desenvolve diversas atividades nas áres assistenciais,
+                            saúde e sócio-cultural, através de ações próprias, por meio de assessorias técnicas e por intermédio de gestões
                             políticas administrativas junto a instituições governamentais e não governamentais.
                         </p>
                         <button onClick={goToHistory} >Saber Mais</button>
@@ -150,15 +163,21 @@ export default function Home() {
                     <div className='cards'>
 
                         {incidents.map((incidents, index) => (
-                            <div className='card' onClick={() => goToDetails(incidents.user_id)} key={incidents.user_id} >
+                            <div className='card' onClick={() => goToDetails(incidents.id, incidents.caption, incidents.media_type, incidents.username)} key={incidents.id} > 
 
                                 <div className='image-card'>
-                                    <img src={incidents.url} alt={incidents.nome} />
+                                    {
+                                        incidents.media_type === 'VIDEO' ?
+                                            <video src={incidents.media_url} ></video> :
+                                            <img src={incidents.media_url} alt={incidents.caption} />
+                                    }
+                                    
                                 </div>
 
                                 <div className='description-card'>
-                                    <h3>{incidents.atividade + '/' + incidents.local}</h3>
-                                    <p>{incidents.data}</p>
+                                    <p>{incidents.username === "pev_itapebussu" ? "Itapebussu" : "Amanari"} -  {incidents.timestamp ? (incidents.timestamp.slice(8, 10) + '/' + incidents.timestamp.slice(5, 7) + '/' + incidents.timestamp.slice(0, 4)) : (incidents.timestamp)}</p>
+                                    <h3>{incidents.caption}</h3>
+
                                 </div>
                             </div>
                         ))}
@@ -167,15 +186,16 @@ export default function Home() {
 
                     <button onClick={goToActivities} >Ver todas as Atividades</button>
                 </div>
-                {/* <div className='titulos'>
+                <div className='titulos'>
                     <span>Títulos e Reconhecimento</span>
                     <div>
-                        <img src={team} alt='team' />
-                        <img src={team} alt='team' />
-                        <img src={team} alt='team' />
+                        <img src={cmas} alt='team' />
+                        <img src={atestado} alt='team' />
+                        <img src={utilidade} alt='team' />
+                        <img src={utilidadeEstadual} alt='team' />
                     </div>
 
-                </div> */}
+                </div>
 
                 <div className='contact'>
                     <span>Contato - Seja um Parceiro</span>
@@ -204,7 +224,7 @@ export default function Home() {
                                     value={mensagem}
                                     onChange={e => setMensagem(e.target.value)}
                                 />
-                                <button>Enviar</button>
+                                <button><FaWhatsapp size={18} color='#FFFFFF' /> Enviar</button>
                             </form>
                         </div>
                         <div className='info'>
@@ -247,6 +267,7 @@ export default function Home() {
                         >
                             <div>
                                 <img src={parceiro1} alt='parceiros' />
+                                <img src={parceiro10} alt='parceiros' />
                                 <img src={parceiro8} alt='parceiros' />
                                 <img src={parceiro2} alt='parceiros' />
                             </div>

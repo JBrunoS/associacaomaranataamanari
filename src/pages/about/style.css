@@ -1,59 +1,251 @@
 
-.content-card-about {
-    width: 60%;
+.history-about {
+    width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
-    padding: 20px;
-    margin: 10px auto 0px;
+    padding: 10px;
+    margin: 10px auto 20px;
+    background-color: #FFF;
 }
 
-.content-card-about p {
-    font: 400 25px Roboto, sans-serif;
-    margin-top: 20px;
-    text-align: justify;
+.history-about div{
+    width: 75%;
     text-indent: 30px;
+    text-align: justify;
 }
-.content-card-about ul {
-    width: 90%;
+
+.history-about iframe {
+    margin: 30px auto 10px;
+}
+
+.history-pilares {
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 30px;
     
-    margin: 10px auto;
+    background-color: #e7e7e7f8;
+}
+.history-pilares .history-pilares-content {
+    width: 75%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+
+}
+
+.content span{
+    margin-bottom: 20px;
+    font-size: 20px;
+}
+
+.history-pilares .history-pilares-content div:nth-child(even) {
+    width: 50%;
+    height: auto;
+    background-color: #FFF;
+    align-self: flex-end;
+    padding: 20px;
+    position: relative;
+}
+
+.history-pilares .history-pilares-content div:nth-child(odd) {
+    width: 50%;
+    height: auto;
+    background-color: #FFF;
+    align-self: flex-start;
+    padding: 20px;
+    position: relative;
+}
+
+.history-pilares-content div img{
+    position: absolute;
+    top: 2px;
+    right: 20px;
     
 }
-.content-card-about li {
-    font: 300 25px Roboto, sans-serif;
-    margin: 10px auto;
-}
-.picture {
+
+.history-objetivos{
     width: 100%;
     height: 400px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    
+}
+
+.history-objetivos .history-objetivos-card{
+    width: 40%;
+    height: 100%;
+    
+}
+
+.history-objetivos .history-objetivos-card img{
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+}
+
+.history-objetivos .history-objetivos-missao{
+    display: flex;
+    flex-direction: column-reverse;
+    width: 55%;
+    margin-right:30px;
+}
+
+.history-objetivos .history-objetivos-missao div{
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.history-equipe{
+    width: 100%;
+    height: auto;
+    background-color: #e7e7e7f8;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 30px;
+    
+}
+.history-equipe div {
+    width: 70%;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    align-items: center;
+    justify-content: center;
+    row-gap: 10px;
+    column-gap: 10px;
+}
+.history-equipe div div{
+    width: 100%;
+    height: 200px;
+    background-color: #FFF;
+    align-self: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 4px 4px 6px rgba(0,0,0,0.5);
+}
+
+.history-equipe div div div{
+    width: 130px;
+    height: 130px;
+    border-radius: 50%;
+    border: 4px solid #ff8843b2;
+    box-shadow: none;
+}
+.history-equipe div div .describe{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 20%;
+    border: none;
+    border-radius: 0%;
+}
+
+
+.content p {
+    font: 400 18px Roboto, sans-serif;
+    margin-top: 20px;
+    text-align: justify;
+}
+
+.picture {
+    height: 500px;
     overflow: hidden;
     position: relative;
-    margin-top: 30px;
+    margin-top: 30px;   
 }
 
 @media only screen and (max-width: 768px){
-    .content-card-about {
+    .history-about {
         width: 100%;
     }
+
+    .history-about div{
+        width: 100%;
+        text-indent: 30px;
+        text-align: justify;
+    }
+
+    .history-about iframe {
+        width: 100%;
+        height: 300px;
+    }
+
     
-    .content-card-about p {
-        font: 300 18px Roboto, sans-serif;
+    .history-pilares .history-pilares-content {
+        width: 100%;
+    
+    }
+
+    
+    .history-pilares .history-pilares-content div:nth-child(even) {
+        width: 100%;
+        padding: 10px;
+        align-self: center;
+        margin: 10px;
+    }
+    
+    .history-pilares .history-pilares-content div:nth-child(odd) {
+        width: 100%;
+        align-self: center;
+        padding: 10px;
+    
+    }
+
+    .history-objetivos{
+        height: auto;
+        flex-direction: column;
         
     }
 
-    .content-card-about li {
-        font: 300 18px Roboto, sans-serif;
+    .history-objetivos .history-objetivos-card{
         
+        display: none;
     }
     
-    .picture {
+    .history-objetivos .history-objetivos-missao{
+        width: 90%;
+        justify-content: center;
+        align-items: center;
+        margin: 20px;
+    }
+    
+    .history-objetivos .history-objetivos-missao div{
+        width: 100%;
+        margin-bottom: 20px;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .history-equipe div {
+        width: 100%;
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .history-equipe div div{
         width: 100%;
         height: 200px;
-        overflow: hidden;
-        position: static;
-        margin-top: 30px;
+        background-color: #FFF;
+        align-self: center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        box-shadow: 4px 4px 6px rgba(0,0,0,0.5);
     }
     
     .picture img {

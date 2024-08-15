@@ -21,9 +21,10 @@ export default function Projetos() {
     const [positionAman, setPositionAman] = useState('')
 
     async function handleIncidents() {
-        await api.get('/imagens/547')
+        await api.get('https://graph.instagram.com/me/media?fields=id,caption,media_type,media_url,username,timestamp&access_token=IGQVJVNjh4MzZAFamZAPOTdyeDZA5WVlRSjF1cWJ2alB1ZATFBU0V0Q1hRdXNJSHlFTEMwYk9yenJqZAlBycE9rMl92dEJ3cVJLbUo2TzU4TjQ5ZAV9Ya1EtT0ZAkNVJ3aUoybUEzZAGt5QkRCLTV1T3BtczBpaQZDZD')
             .then(response => {
-                setItapImages(response.data)
+
+                setItapImages(response.data.data)
             })
 
         await api.get('/imagens/637')
@@ -39,7 +40,7 @@ export default function Projetos() {
     function openModal547(incident) {
         setIsOpenItap(true);
         setPositionItap(incident)
-        setOpenImageItap(itapImages[incident].url)
+        setOpenImageItap(itapImages[incident].media_url)
     }
     function openModal637(incident) {
         setIsOpenAman(true);
@@ -64,13 +65,13 @@ export default function Projetos() {
             pos = pos++;
         }
 
-        setOpenImageItap(itapImages[pos].url)
+        setOpenImageItap(itapImages[pos].media_url)
         setPositionItap(pos)
 
     }
 
     function handlePrevImage547() {
-        
+
         let pos = positionItap;
         pos = pos - 1;
 
@@ -78,12 +79,12 @@ export default function Projetos() {
             pos = itapImages.length - 1;
         }
 
-        setOpenImageItap(itapImages[pos].url)
+        setOpenImageItap(itapImages[pos].media_url)
         setPositionItap(pos)
     }
 
     function handleNextImage637() {
-        
+
         let pos = positionAman;
         pos = pos + 1;
 
@@ -101,7 +102,7 @@ export default function Projetos() {
     }
 
     function handlePrevImage637() {
-        
+
         let pos = positionAman;
         pos = pos - 1;
 
@@ -167,13 +168,15 @@ export default function Projetos() {
                             <h2>Dias de Atendimento</h2>
                             <p>Terça-feira a Sábado - manhã e tarde</p>
 
-                            <h2>Histórico breve</h2>
-                            <p></p>
+                            {/* <h2>Histórico breve</h2> */}
+                            {/* <p></p> */}
                         </div>
                         <div className="imagens-projeto">
                             {
                                 itapImages.map((incidents, index) => (
-                                    <img key={incidents.id} src={incidents.url} alt={incidents.url} onClick={() => openModal547(index)} />
+                                    incidents.media_type !== 'VIDEO' ?
+                                        <img key={incidents.id} src={incidents.media_url} alt={incidents.media_url} onClick={() => openModal547(index)} /> :
+                                        <video src={incidents.media_url} controls></video>
                                 ))
                             }
                         </div>
@@ -188,19 +191,18 @@ export default function Projetos() {
                             <p>Faixa etária: 1 - 22 anos</p>
                             <h2>Atividades Realizadas</h2>
                             <ul>
-                                <li>Atividade 1: uma breve descriçãoda atividade realizada  no pev</li>
-                                <li>Atividade 1: uma breve descriçãoda atividade realizada  no pev</li>
-                                <li>Atividade 1: uma breve descriçãoda atividade realizada  no pev</li>
-                                <li>Atividade 1: uma breve descriçãoda atividade realizada  no pev</li>
-                                <li>Atividade 1: uma breve descriçãoda atividade realizada  no pev</li>
-                                <li>Atividade 1: uma breve descriçãoda atividade realizada  no pev</li>
+                                <li>Área Física: Avaliação de saúde, Futebol, jogos recreativos, vôlei;</li>
+                                <li>Área cognitiva: reforço escolar, musicalização, </li>
+                                <li>Área Socioemocional: Passeios de convivência e gincanas</li>
+                                <li>Atividades de serviço: Passeatas de concientização</li>
+                                <li>Oficinas: violão, computação, artes manuais;</li>
                             </ul>
 
                             <h2>Dias de Atendimento</h2>
-                            <p>Terça-feira a Sexta-feira - manhã e tarde</p>
+                            <p>Terça-feira a Sábado - manhã e tarde</p>
 
-                            <h2>Histórico breve</h2>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus mattis finibus dui, ac congue mauris tempor eget. Vivamus rhoncus erat eu vestibulum maximus. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Praesent non commodo est. Nulla facilisi. Etiam ornare tortor sit amet est ultrices, sed elementum arcu accumsan. Vestibulum vel felis eu nisi semper laoreet sed non urna. Integer nec pharetra dui, quis mollis enim. Mauris id molestie neque. Sed vitae enim felis. Nam ut bibendum risus. Praesent dignissim interdum tortor eu pellentesque. Proin vel dui vel quam vulputate porta sed ac erat. Nam diam libero, sollicitudin at imperdiet sed, blandit non sem. Donec volutpat, est et ornare consequat, orci elit sollicitudin quam, vel iaculis nibh arcu id massa. Nullam et nibh vitae erat auctor dignissim non at enim.</p>
+                            {/* <h2>Histórico breve</h2>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus mattis finibus dui, ac congue mauris tempor eget. Vivamus rhoncus erat eu vestibulum maximus. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Praesent non commodo est. Nulla facilisi. Etiam ornare tortor sit amet est ultrices, sed elementum arcu accumsan. Vestibulum vel felis eu nisi semper laoreet sed non urna. Integer nec pharetra dui, quis mollis enim. Mauris id molestie neque. Sed vitae enim felis. Nam ut bibendum risus. Praesent dignissim interdum tortor eu pellentesque. Proin vel dui vel quam vulputate porta sed ac erat. Nam diam libero, sollicitudin at imperdiet sed, blandit non sem. Donec volutpat, est et ornare consequat, orci elit sollicitudin quam, vel iaculis nibh arcu id massa. Nullam et nibh vitae erat auctor dignissim non at enim.</p> */}
                         </div>
                         <div className="imagens-projeto">
                             {

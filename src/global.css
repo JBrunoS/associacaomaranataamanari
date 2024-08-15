@@ -4,16 +4,16 @@
     margin: 0;
     padding: 0;
     outline: 0;
-    box-sizing: border-box;    
+    box-sizing: border-box;
 }
 
 body {
     font: 400 14px Roboto, sans-serif;
     -webkit-font-smoothing: antialiased;
-    
+
 }
 
-.container{
+.container {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -24,7 +24,7 @@ body {
 .header {
     position: fixed;
     top: 0;
-    z-index: 2;
+    z-index: 1;
     background-color: #f18140;
     width: 100%;
     height: 70px;
@@ -33,22 +33,25 @@ body {
     align-items: center;
     justify-content: space-around;
     box-shadow: 0px 4px 5px rgba(0, 0, 0, 0.25);
-    
+
 }
 
-.header div {
-    
+.header .logo {
     width: 35%;
     height: 100%;
     display: flex;
     align-items: center;
-    
-    padding-left: 40px;
+    padding-left: 10px;
+}
+
+.header .logo img:last-of-type {
+    width: 140px;
+    margin-left: 10px;
 }
 
 .header .menu {
     width: 75%;
-    height: 100%; 
+    height: 100%;
     display: flex;
     align-items: center;
     justify-content: flex-end;
@@ -68,7 +71,6 @@ body {
 
 .header img {
     width: 60px;
-    margin-right: 20px;
 }
 
 .header a {
@@ -77,7 +79,7 @@ body {
     color: #FFF;
     font-weight: 300;
     font-size: 18px;
-    margin: 0 10px ;
+    margin: 0 10px;
     -webkit-text-size-adjust: 20%;
 }
 
@@ -85,27 +87,70 @@ body {
     box-shadow: 0px 0px 6px rgba(0, 0, 0, 0.25);
     border-radius: 6px;
     background-color: #d37640b4;
-    
+
 }
 
-.body{
+.body {
     display: flex;
     flex-direction: column;
     align-items: center;
     width: 100%;
-    
+
 }
 
-.body span{
+.body span {
     color: #FF8743;
     font: 500 28px Roboto, sans-serif;
     -webkit-font-smoothing: antialiased;
     /* border-bottom: 1px solid; */
-    
+
     text-align: center;
 }
 
-@media only screen and (max-width: 768px){
+.dropbtn {
+    background-color: transparent;
+    color: white;
+    padding: 16px;
+    font-size: 18px;
+    border: none;
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+    width: 15%;
+    height: 100%;
+    padding-left: 0px;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f18140;
+    width: 250px;
+    height: auto;
+    z-index: 1;
+    left: -110px;
+    padding: 10px;
+}
+
+.dropdown-content a {
+    color: #FFF;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-content a:hover {
+    background-color: #d37640b4;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+
+@media only screen and (max-width: 768px) {
     .header {
         
         height: 70px;
@@ -113,16 +158,17 @@ body {
         flex-direction: row;
         align-items: center;
         justify-content: space-between;
-        
+
     }
-    .header .menu{
+
+    .header .menu {
         display: none;
     }
 
     .header div {
         width: auto;
         display: flex;
-        
+
         align-items: center;
         justify-content: flex-start;
         padding-left: 0px;
@@ -145,41 +191,41 @@ body {
 
     .header img {
         width: 50px;
-        margin-left: 20px;
     }
-    
+
+    .header .logo img:last-of-type {
+        width: 110px;
+        margin-left: 10px;
+    }
+
     .header a {
         padding: 10px;
         text-decoration: none;
         color: #FFF;
         font-weight: 300;
         font-size: 20px;
-        margin:0px ;
+        margin: 0px;
         -webkit-text-size-adjust: 20%;
     }
 
     .modal-header {
-
-        /* top: 60%;
-        left: 50%;
-        right: auto;
-        bottom: auto;
-        margin-right: -50%;
-        transform: translate(-50%, -50%); */
         z-index: 2;
-        margin: 50% 75% 0;
-        width: 55%;
-        height: 290px;
+        position: absolute;
+        top: 278px;
+        right: -25%;
+        width: 59%;
+        height: auto;
         margin-right: 0px;
         transform: translate(-50%, -50%);
         background-color: #FF8743;
         padding: 40px 10px 20px;
-        
+
     }
 
     .modal-header .header-links {
         display: flex;
         flex-direction: column;
+        height: auto;
     }
 
     .modal-header .header-links a {
@@ -189,7 +235,7 @@ body {
         border-bottom: .2px ridge #bfbfc1;
         margin-bottom: 10px;
         padding-bottom: 10px;
-    
+
     }
 
 }

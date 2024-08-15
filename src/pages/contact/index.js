@@ -1,4 +1,5 @@
 import React, {useState} from 'react'
+import { FaWhatsapp } from 'react-icons/fa'
 
 import {
     StaticGoogleMap,
@@ -7,7 +8,7 @@ import {
 import Header from '../../components/header';
 
 import './style.css'
-import api from '../../services/api'
+// import api from '../../services/api'
 import Footer from '../../components/footer';
 
 
@@ -19,19 +20,23 @@ export default function Contact() {
     async function handleSendMessage(e) {
         e.preventDefault();
 
-        const data = { nome, email, mensagem }
+        e.preventDefault();
+        const win = window.open(`https://api.whatsapp.com/send?phone=5585988859466&text=Olá, me chamo ${nome}, esse é meu email ${email} e essa é minha mensagem: ${mensagem}. Aguardo retorno.`, '_blank')
+        win.focus()
 
-        try {
-            await api.post('/messages', data)
+        // const data = { nome, email, mensagem }
 
-            setNome('')
-            setEmail('')
-            setMensagem('')
+        // try {
+        //     await api.post('/messages', data)
 
-            alert("Mensagem Enviada!")
-        } catch (error) {
-            console.log(error)
-        }
+        //     setNome('')
+        //     setEmail('')
+        //     setMensagem('')
+
+        //     alert("Mensagem Enviada!")
+        // } catch (error) {
+        //     console.log(error)
+        // }
 
     }
 
@@ -66,7 +71,7 @@ export default function Contact() {
                                     value={mensagem}
                                     onChange={e => setMensagem(e.target.value)}
                                 />
-                                <button>Enviar</button>
+                                <button> <FaWhatsapp size={20} color='#FFFFFF' /> Enviar</button>
                             </form>
                     </div>
 

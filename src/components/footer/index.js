@@ -8,7 +8,7 @@ export default function Footer() {
         <div className="container-footer">
             <div className='social-media'>
                 <a
-                    href='https://www.instagram.com/projeto_pev/'
+                    href='https://www.instagram.com/pev_itapebussu/'
                     target='_blank'
                     rel="noreferrer"
                 >
